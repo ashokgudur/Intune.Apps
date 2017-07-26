@@ -294,7 +294,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intune.ApiGateway\Intune.ApiGateway.csproj">
-      <Project>{e1c51473-6d2e-4df9-8486-5ebbfe382076}</Project>
+      <Project>{164690c9-90f5-4dbc-a809-b18ce4f06b58}</Project>
       <Name>Intune.ApiGateway</Name>
     </ProjectReference>
   </ItemGroup>

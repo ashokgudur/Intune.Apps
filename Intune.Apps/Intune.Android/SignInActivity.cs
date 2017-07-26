@@ -190,10 +190,10 @@ namespace Intune.Android
                 _password = password;
             }
 
-            public void SignIn()
+            public async void SignIn()
             {
                 var rootView = _activity.FindViewById<View>(Resource.Id.loginRootLinearLayout);
-                var user = IntuneService.SignIn(_signInId, _password);
+                var user = await IntuneService.SignIn(_signInId, _password);
                 if (user == null)
                 {
                     Snackbar.Make(rootView, "Cannot login!!!", Snackbar.LengthLong)

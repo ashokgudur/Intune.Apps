@@ -19,13 +19,13 @@ namespace Intune.Android
             startupWork.Start();
         }
 
-        void SimulateStartup()
+        async void SimulateStartup()
         {
             var store = AccountStore.Create();
             var storeAccounts = store.FindAccountsForService("IntuneTechnologiesApp");
             if (storeAccounts.Count() == 0)
             {
-                IntuneService.SignIn("SystemWakeUpEmail", "SystemWakeUpPassword");
+                await IntuneService.SignIn("SystemWakeUpEmail", "SystemWakeUpPassword");
                 StartActivity(new Intent(Application.Context, typeof(SignInActivity)));
                 return;
             }
@@ -33,7 +33,7 @@ namespace Intune.Android
             var signInAccount = storeAccounts.ToArray()[0];
             var signInId = signInAccount.Username;
             var password = signInAccount.Properties["Password"];
-            var user = IntuneService.SignIn(signInId, password);
+            var user = await IntuneService.SignIn(signInId, password);
             if (user == null)
                 StartActivity(new Intent(Application.Context, typeof(SignInActivity)));
             else
