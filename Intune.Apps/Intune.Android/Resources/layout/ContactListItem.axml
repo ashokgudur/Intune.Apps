@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="28.5dp"
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+        <TextView
+            android:text="Contact Name"
+            android:id="@+id/contactNameTextView"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@android:color/holo_green_dark"
+            android:gravity="center_vertical"
+            android:layout_width="262dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp" />
+        <TextView
+            android:text="Intuned"
+            android:id="@+id/contactIsIntunedTextView"
+            android:layout_width="64.0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="16dp"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginRight="5dp" />
+        <ImageView
+            android:src="@drawable/bluedot"
+            android:id="@+id/contactCommentIndicatorImageView"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:scaleType="centerInside"
+            android:layout_gravity="center" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="24.5dp"
+        android:id="@+id/linearLayout2"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+        <TextView
+            android:text="Mobile"
+            android:id="@+id/contactMobileTextView"
+            android:layout_width="169.5dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="16dp"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_marginRight="10dp" />
+        <TextView
+            android:text="Address"
+            android:id="@+id/contactAddressTextView"
+            android:layout_width="176.0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="16dp"
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+</LinearLayout>

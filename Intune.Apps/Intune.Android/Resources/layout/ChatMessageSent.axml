@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:text="chat message"
+        android:id="@+id/chatMessageSTextView"
+        android:textSize="18dp"
+        android:textColor="@android:color/background_light"
+        android:background="@android:color/holo_green_dark"
+        android:singleLine="false"
+        android:maxWidth="275dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:padding="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="right" />
+    <TextView
+        android:text="datetime"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/chatMessageSTimestampTextView"
+        android:textSize="15dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="right" />
+</LinearLayout>

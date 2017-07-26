@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/accountEntryRootLinearLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="Enter the details of the new entry."
+        android:layout_width="match_parent"
+        android:layout_height="34.5dp"
+        android:id="@+id/accountEntryTitleBarTextView"
+        android:background="@android:color/holo_blue_dark"
+        android:padding="5dp"
+        android:textColor="@android:color/background_light"
+        android:textSize="20dp"
+        android:layout_marginBottom="5dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp">
+        <EditText
+            android:inputType="date"
+            android:id="@+id/entryDateEditText"
+            android:hint="transaction date"
+            android:layout_width="225.5dp"
+            android:layout_height="match_parent" />
+        <ImageButton
+            android:src="@android:drawable/ic_menu_my_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/entryDatePickerImageButton" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50.5dp"
+        android:id="@+id/linearLayout1"
+        android:gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:text="You:"
+            android:layout_width="62.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/entryTxnTypeTextView"
+            android:gravity="center_vertical"
+            android:textSize="18dp"
+            android:paddingLeft="5dp" />
+        <RadioGroup
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/entryTxnTypeRadioGroup"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+            <RadioButton
+                android:layout_width="79.0dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Paid"
+                android:id="@+id/entryTxnTypePaidRadioButton"
+                android:textSize="18dp" />
+            <RadioButton
+                android:layout_width="90.5dp"
+                android:layout_height="wrap_content"
+                android:text="Issued"
+                android:id="@+id/entryTxnTypeIssuedRadioButton"
+                android:textSize="18dp" />
+            <RadioButton
+                android:layout_width="112.0dp"
+                android:layout_height="wrap_content"
+                android:text="Received"
+                android:id="@+id/entryTxnTypeReceviedRadioButton"
+                android:textSize="18dp" />
+        </RadioGroup>
+    </LinearLayout>
+    <EditText
+        android:inputType="numberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/entryQuantityEditText"
+        android:hint="Quantity"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp" />
+    <EditText
+        android:inputType="numberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/entryAmountEditText"
+        android:hint="Amount"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/entryNotesEditText"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:hint="Notes (optional)" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="42.0dp"
+        android:id="@+id/linearLayout2"
+        android:gravity="center">
+        <Button
+            android:text="Save"
+            android:id="@+id/entryOkButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <Space
+            android:layout_width="90.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/space4" />
+        <Button
+            android:text="New"
+            android:id="@+id/entryNewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>
