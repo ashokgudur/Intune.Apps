@@ -2,10 +2,10 @@ using System;
 
 namespace Intune.Shared.Model
 {
-    public enum TxnType
+    public enum CommentMessageDirection
     {
-        Paid = 0,
-        Issued = 1,
+        None = 0,
+        Sent = 1,
         Received = 2
     }
 }

@@ -9,8 +9,7 @@ using Android.Util;
 using Android.Views.InputMethods;
 using Android.Content;
 using System.Threading;
-using Intune.ApiGateway;
-using Intune.ApiGateway.Model;
+using Intune.Shared.Model;
 
 namespace Intune.Android
 {

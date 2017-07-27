@@ -3,27 +3,10 @@ using System.Collections.Generic;
 using Android.App;
 using Android.Views;
 using Android.Widget;
-using System.Globalization;
-using Android.Database;
+using Intune.Shared.Model;
 
 namespace Intune.Android
 {
-    public enum CommentMessageDirection
-    {
-        None = 0,
-        Sent = 1,
-        Received = 2
-    }
-
-    public class CommentMessage
-    {
-        public int Id { get; set; }
-        public CommentMessageDirection Direction { get; set; }
-        public string Username { get; set; }
-        public string Message { get; set; }
-        public DateTime Timestamp { get; set; }
-    }
-
     public class ChatboardAdapter : BaseAdapter
     {
         List<CommentMessage> _chatMessages;

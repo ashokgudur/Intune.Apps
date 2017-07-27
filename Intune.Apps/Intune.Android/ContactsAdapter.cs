@@ -2,9 +2,7 @@ using System.Collections.Generic;
 using Android.App;
 using Android.Views;
 using Android.Widget;
-using System.Globalization;
-using Intune.ApiGateway;
-using Intune.ApiGateway.Model;
+using Intune.Shared.Model;
 
 namespace Intune.Android
 {

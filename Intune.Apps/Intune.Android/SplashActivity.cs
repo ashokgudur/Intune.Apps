@@ -4,8 +4,7 @@ using Android.Content;
 using Android.Support.V7.App;
 using Xamarin.Auth;
 using System.Linq;
-using Intune.ApiGateway;
-using Intune.ApiGateway.Model;
+using Intune.Shared.Model;
 
 namespace Intune.Android
 {
@@ -19,13 +18,13 @@ namespace Intune.Android
             startupWork.Start();
         }
 
-        async void SimulateStartup()
+        private void SimulateStartup()
         {
             var store = AccountStore.Create();
             var storeAccounts = store.FindAccountsForService("IntuneTechnologiesApp");
             if (storeAccounts.Count() == 0)
             {
-                await IntuneService.SignIn("SystemWakeUpEmail", "SystemWakeUpPassword");
+                IntuneService.SignIn("SystemWakeUpEmail", "SystemWakeUpPassword");
                 StartActivity(new Intent(Application.Context, typeof(SignInActivity)));
                 return;
             }
@@ -33,7 +32,7 @@ namespace Intune.Android
             var signInAccount = storeAccounts.ToArray()[0];
             var signInId = signInAccount.Username;
             var password = signInAccount.Properties["Password"];
-            var user = await IntuneService.SignIn(signInId, password);
+            var user = IntuneService.SignIn(signInId, password);
             if (user == null)
                 StartActivity(new Intent(Application.Context, typeof(SignInActivity)));
             else

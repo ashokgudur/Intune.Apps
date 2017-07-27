@@ -9,8 +9,7 @@ using System.Linq;
 using Microsoft.AspNet.SignalR.Client;
 using System.Threading.Tasks;
 using System.Globalization;
-using Intune.ApiGateway;
-using Intune.ApiGateway.Model;
+using Intune.Shared.Model;
 
 namespace Intune.Android
 {

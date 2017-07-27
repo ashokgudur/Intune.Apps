@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intune.Android", "Intune.Android\Intune.Android.csproj", "{A35AB063-59D1-4EC5-8EA5-D1731F2E912B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intune.ApiGateway", "Intune.ApiGateway\Intune.ApiGateway.csproj", "{164690C9-90F5-4DBC-A809-B18CE4F06B58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intune.Shared", "Intune.Shared\Intune.Shared.csproj", "{3BD64A75-2AD8-45CA-9310-E7025A2A46E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,10 @@ Global
 		{A35AB063-59D1-4EC5-8EA5-D1731F2E912B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A35AB063-59D1-4EC5-8EA5-D1731F2E912B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A35AB063-59D1-4EC5-8EA5-D1731F2E912B}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{164690C9-90F5-4DBC-A809-B18CE4F06B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{164690C9-90F5-4DBC-A809-B18CE4F06B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{164690C9-90F5-4DBC-A809-B18CE4F06B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{164690C9-90F5-4DBC-A809-B18CE4F06B58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BD64A75-2AD8-45CA-9310-E7025A2A46E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD64A75-2AD8-45CA-9310-E7025A2A46E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD64A75-2AD8-45CA-9310-E7025A2A46E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD64A75-2AD8-45CA-9310-E7025A2A46E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

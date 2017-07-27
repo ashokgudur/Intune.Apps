@@ -8,8 +8,7 @@ using Android.Content;
 using Android.Views.InputMethods;
 using Android.Support.Design.Widget;
 using System.Threading;
-using Intune.ApiGateway;
-using Intune.ApiGateway.Model;
+using Intune.Shared.Model;
 
 namespace Intune.Android
 {

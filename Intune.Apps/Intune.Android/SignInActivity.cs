@@ -10,9 +10,7 @@ using Android.Views.InputMethods;
 using Android.Util;
 using System.Text.RegularExpressions;
 using Xamarin.Auth;
-using System.Linq;
-using Intune.ApiGateway;
-using Intune.ApiGateway.Model;
+using Intune.Shared.Model;
 
 namespace Intune.Android
 {
@@ -190,10 +188,10 @@ namespace Intune.Android
                 _password = password;
             }
 
-            public async void SignIn()
+            public void SignIn()
             {
                 var rootView = _activity.FindViewById<View>(Resource.Id.loginRootLinearLayout);
-                var user = await IntuneService.SignIn(_signInId, _password);
+                var user = IntuneService.SignIn(_signInId, _password);
                 if (user == null)
                 {
                     Snackbar.Make(rootView, "Cannot login!!!", Snackbar.LengthLong)
