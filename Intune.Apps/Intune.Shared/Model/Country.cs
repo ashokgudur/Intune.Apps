@@ -1,6 +1,6 @@
 using System;
 
-namespace Intune.Android
+namespace Intune.Shared.Model
 {
     public class Country
     {

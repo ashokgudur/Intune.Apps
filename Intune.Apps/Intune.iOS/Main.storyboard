@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController" storyboardIdentifier="SignInViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3" translatesAutoresizingMaskIntoConstraints="NO" text="Sign In ID:" fixedFrame="YES">
+                                <rect key="frame" x="44" y="219" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to your Intune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="44" y="105" width="287" height="39"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="8" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Email or Mobile" clearButtonMode="whileEditing" fixedFrame="YES">
+                                <rect key="frame" x="44" y="248" width="287" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="emailAddress"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9" translatesAutoresizingMaskIntoConstraints="NO" text="Password:" fixedFrame="YES">
+                                <rect key="frame" x="44" y="292" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="10" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="whileEditing" placeholder="Password" fixedFrame="YES">
+                                <rect key="frame" x="44" y="321" width="287" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" returnKeyType="go"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="11" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="142" y="368" width="91" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <state key="normal" title="Sign-in">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SignInButton_TouchUpInside:" destination="BYZ-38-t0r" id="29" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="12" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="253" y="160" width="78" height="30"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <state key="normal" title="Sign-up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES" button="YES"/>
+                                </accessibility>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="18" translatesAutoresizingMaskIntoConstraints="NO" text="Message..." numberOfLines="3" adjustsFontSizeToFit="NO" fixedFrame="YES">
+                                <rect key="frame" x="44" y="429" width="287" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="34" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="44" y="160" width="128" height="30"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <state key="normal" title="Forgot password">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES" button="YES"/>
+                                </accessibility>
+                                <connections>
+                                    <action selector="ForgotPasswordButton_TouchUpInside:" destination="BYZ-38-t0r" id="42" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3"/>
+                                <exclude reference="6"/>
+                                <exclude reference="8"/>
+                                <exclude reference="9"/>
+                                <exclude reference="10"/>
+                                <exclude reference="11"/>
+                                <exclude reference="12"/>
+                                <exclude reference="18"/>
+                                <exclude reference="34"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="3"/>
+                                <include reference="6"/>
+                                <include reference="8"/>
+                                <include reference="9"/>
+                                <include reference="10"/>
+                                <include reference="11"/>
+                                <include reference="12"/>
+                                <include reference="18"/>
+                                <include reference="34"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="SignInIdLabel" destination="3" id="name-outlet-3"/>
+                        <outlet property="IntuneLoginInTitle" destination="6" id="name-outlet-6"/>
+                        <outlet property="SignInPasswordLabel" destination="9" id="name-outlet-9"/>
+                        <outlet property="SignInIdTextField" destination="8" id="name-outlet-8"/>
+                        <outlet property="SignInPasswordTextField" destination="10" id="name-outlet-10"/>
+                        <outlet property="SignInButton" destination="11" id="name-outlet-11"/>
+                        <outlet property="SignUpButton" destination="12" id="name-outlet-12"/>
+                        <outlet property="MessageLabel" destination="18" id="name-outlet-18"/>
+                        <outlet property="ForgotPasswordButton" destination="34" id="name-outlet-34"/>
+                        <outlet property="intuneTitleNavigationItem" destination="36" id="name-outlet-36"/>
+                    </connections>
+                    <navigationItem id="136" key="navigationItem" title="SIgn-in"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-623" y="-25"/>
+        </scene>
+        <scene sceneID="52">
+            <objects>
+                <navigationController id="53" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="55">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="137" destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                    <keyCommands/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1045" y="-26"/>
+        </scene>
+        <scene sceneID="146">
+            <objects>
+                <viewController id="147" sceneMemberID="viewController" storyboardIdentifier="ResetPasswordController" customClass="ResetPasswordController" title="Reset Password">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="144"/>
+                        <viewControllerLayoutGuide type="bottom" id="145"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="148">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset your Intune password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="176" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="46" y="95" width="287" height="39"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="177" translatesAutoresizingMaskIntoConstraints="NO" text="Sign In ID:" fixedFrame="YES">
+                                <rect key="frame" x="46" y="158" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="178" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Email or Mobile" clearButtonMode="whileEditing" fixedFrame="YES">
+                                <rect key="frame" x="46" y="187" width="287" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="emailAddress"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="181" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="85" y="225" width="205" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Send verification code">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SignInButton_TouchUpInside:" destination="183" id="182" eventType="touchUpInside"/>
+                                    <action selector="SendVerificationCodeButton_TouchUpInside:" destination="147" id="202" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="184" translatesAutoresizingMaskIntoConstraints="NO" text="Message..." numberOfLines="3" adjustsFontSizeToFit="NO" fixedFrame="YES">
+                                <rect key="frame" x="46" y="524" width="285" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="211" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="28" y="263" width="323" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="179" translatesAutoresizingMaskIntoConstraints="NO" text="Verification OTP:" fixedFrame="YES">
+                                        <rect key="frame" x="18" y="16" width="146" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="180" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="whileEditing" placeholder="Verfication code" fixedFrame="YES">
+                                        <rect key="frame" x="18" y="45" width="287" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" returnKeyType="go"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="196" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="107" y="82" width="109" height="30"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Verify OTP">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SignInButton_TouchUpInside:" destination="198" id="197" eventType="touchUpInside"/>
+                                            <action selector="VerifyOtpButton_TouchUpInside:" destination="147" id="217" eventType="touchUpInside"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="179"/>
+                                        <exclude reference="180"/>
+                                        <exclude reference="196"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <mask key="subviews">
+                                        <include reference="179"/>
+                                        <include reference="180"/>
+                                        <include reference="196"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" id="212" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="28" y="384" width="323" height="119"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="185" translatesAutoresizingMaskIntoConstraints="NO" text="New password:" fixedFrame="YES">
+                                        <rect key="frame" x="16" y="10" width="154" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="186" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="whileEditing" placeholder="New password" fixedFrame="YES">
+                                        <rect key="frame" x="18" y="39" width="287" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" returnKeyType="go"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="199" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="91" y="77" width="141" height="30"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Reset password">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SignInButton_TouchUpInside:" destination="201" id="200" eventType="touchUpInside"/>
+                                            <action selector="ResetPasswordButton_TouchUpInside:" destination="147" id="216" eventType="touchUpInside"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="185"/>
+                                        <exclude reference="186"/>
+                                        <exclude reference="199"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <mask key="subviews">
+                                        <include reference="185"/>
+                                        <include reference="186"/>
+                                        <include reference="199"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="176"/>
+                                <exclude reference="177"/>
+                                <exclude reference="178"/>
+                                <exclude reference="181"/>
+                                <exclude reference="184"/>
+                                <exclude reference="211"/>
+                                <exclude reference="212"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="176"/>
+                                <include reference="177"/>
+                                <include reference="178"/>
+                                <include reference="181"/>
+                                <include reference="184"/>
+                                <include reference="211"/>
+                                <include reference="212"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="ResetPasswordTitle" destination="176" id="name-outlet-176"/>
+                        <outlet property="SendVerificationCodeButton" destination="181" id="name-outlet-181"/>
+                        <outlet property="SigninIdLabel" destination="177" id="name-outlet-177"/>
+                        <outlet property="SignInIdTextField" destination="178" id="name-outlet-178"/>
+                        <outlet property="MessageLabel" destination="184" id="name-outlet-184"/>
+                        <outlet property="VerificationOtpLabel" destination="179" id="name-outlet-179"/>
+                        <outlet property="VerificationCodeTextField" destination="180" id="name-outlet-180"/>
+                        <outlet property="VerifyOtpButton" destination="196" id="name-outlet-196"/>
+                        <outlet property="NewPasswordLabel" destination="185" id="name-outlet-185"/>
+                        <outlet property="NewPasswordTextField" destination="186" id="name-outlet-186"/>
+                        <outlet property="ResetPasswordButton" destination="199" id="name-outlet-199"/>
+                        <outlet property="NewPasswordView" destination="212" id="name-outlet-212"/>
+                        <outlet property="VerifyOtpView" destination="211" id="name-outlet-211"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="149" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-212" y="-24"/>
+        </scene>
+        <scene sceneID="192">
+            <objects>
+                <viewController id="191" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="187"/>
+                        <viewControllerLayoutGuide type="bottom" id="188"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="193">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="194" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213" y="100"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+        <simulatedOrientationMetrics key="orientation"/>
+    </simulatedMetricsContainer>
+</document>
