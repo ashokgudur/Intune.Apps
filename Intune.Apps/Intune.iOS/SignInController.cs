@@ -4,9 +4,9 @@ using UIKit;
 
 namespace Intune.iOS
 {
-    public partial class ViewController : UIViewController
+    public partial class SignInController : UIViewController
     {
-        protected ViewController(IntPtr handle) : base(handle)
+        protected SignInController(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
         }

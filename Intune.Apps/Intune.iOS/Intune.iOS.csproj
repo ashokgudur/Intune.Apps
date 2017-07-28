@@ -108,9 +108,9 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
+    <Compile Include="SignInController.cs" />
+    <Compile Include="SignInController.designer.cs">
+      <DependentUpon>SignInController.cs</DependentUpon>
     </Compile>
     <Compile Include="IntuneService.cs" />
     <Compile Include="ResetPasswordController.cs" />

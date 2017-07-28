@@ -10,8 +10,8 @@ using System.CodeDom.Compiler;
 
 namespace Intune.iOS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("SignInController")]
+    partial class SignInController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
