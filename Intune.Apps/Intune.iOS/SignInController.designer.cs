@@ -47,6 +47,10 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView SignInView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SignUpButton { get; set; }
 
         [Action ("ForgotPasswordButton_TouchUpInside:")]
@@ -56,6 +60,10 @@ namespace Intune.iOS
         [Action ("SignInButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void SignInButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("SignUpButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SignUpButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -97,6 +105,11 @@ namespace Intune.iOS
             if (SignInPasswordTextField != null) {
                 SignInPasswordTextField.Dispose ();
                 SignInPasswordTextField = null;
+            }
+
+            if (SignInView != null) {
+                SignInView.Dispose ();
+                SignInView = null;
             }
 
             if (SignUpButton != null) {

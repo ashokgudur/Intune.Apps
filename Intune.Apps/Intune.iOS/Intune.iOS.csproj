@@ -118,6 +118,10 @@
       <DependentUpon>ResetPasswordController.cs</DependentUpon>
     </Compile>
     <Compile Include="MobileNumberValidator.cs" />
+    <Compile Include="SignUpController.cs" />
+    <Compile Include="SignUpController.designer.cs">
+      <DependentUpon>SignUpController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intune.Shared\Intune.Shared.csproj">

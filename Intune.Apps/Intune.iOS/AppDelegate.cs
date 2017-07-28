@@ -23,7 +23,7 @@ namespace Intune.iOS
 
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
             var storyboard = UIStoryboard.FromName("Main", NSBundle.MainBundle);
-            var rootViewController = (UIViewController)storyboard.InstantiateViewController("SignInViewController");
+            var rootViewController = (UIViewController)storyboard.InstantiateViewController("SignInController");
             Window.RootViewController = new UINavigationController(rootViewController);
             Window.MakeKeyAndVisible();
             return true;

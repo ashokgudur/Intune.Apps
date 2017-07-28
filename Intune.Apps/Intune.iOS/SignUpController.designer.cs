@@ -11,48 +11,48 @@ using UIKit;
 
 namespace Intune.iOS
 {
-    [Register ("ResetPasswordController")]
-    partial class ResetPasswordController
+    [Register ("SignUpController")]
+    partial class SignUpController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel FullNameLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField FullNameTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LoginIdLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField LoginIdTextField { get; set; }
+
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel MessageLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel NewPasswordLabel { get; set; }
+        UIKit.UILabel PasswordLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField NewPasswordTextField { get; set; }
+        UIKit.UITextField PasswordTextField { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView NewPasswordView { get; set; }
+        UIKit.UILabel SignUpAgreementLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton ResetPasswordButton { get; set; }
+        UIKit.UIButton SignUpButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel ResetPasswordTitle { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton SendVerificationCodeButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel SigninIdLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField SignInIdTextField { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView SignInView { get; set; }
+        UIKit.UILabel SignUpTitle { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -70,13 +70,9 @@ namespace Intune.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView VerifyOtpView { get; set; }
 
-        [Action ("ResetPasswordButton_TouchUpInside:")]
+        [Action ("SignUpButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void ResetPasswordButton_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("SendVerificationCodeButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void SendVerificationCodeButton_TouchUpInside (UIKit.UIButton sender);
+        partial void SignUpButton_TouchUpInside (UIKit.UIButton sender);
 
         [Action ("VerifyOtpButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -84,54 +80,54 @@ namespace Intune.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (FullNameLabel != null) {
+                FullNameLabel.Dispose ();
+                FullNameLabel = null;
+            }
+
+            if (FullNameTextField != null) {
+                FullNameTextField.Dispose ();
+                FullNameTextField = null;
+            }
+
+            if (LoginIdLabel != null) {
+                LoginIdLabel.Dispose ();
+                LoginIdLabel = null;
+            }
+
+            if (LoginIdTextField != null) {
+                LoginIdTextField.Dispose ();
+                LoginIdTextField = null;
+            }
+
             if (MessageLabel != null) {
                 MessageLabel.Dispose ();
                 MessageLabel = null;
             }
 
-            if (NewPasswordLabel != null) {
-                NewPasswordLabel.Dispose ();
-                NewPasswordLabel = null;
+            if (PasswordLabel != null) {
+                PasswordLabel.Dispose ();
+                PasswordLabel = null;
             }
 
-            if (NewPasswordTextField != null) {
-                NewPasswordTextField.Dispose ();
-                NewPasswordTextField = null;
+            if (PasswordTextField != null) {
+                PasswordTextField.Dispose ();
+                PasswordTextField = null;
             }
 
-            if (NewPasswordView != null) {
-                NewPasswordView.Dispose ();
-                NewPasswordView = null;
+            if (SignUpAgreementLabel != null) {
+                SignUpAgreementLabel.Dispose ();
+                SignUpAgreementLabel = null;
             }
 
-            if (ResetPasswordButton != null) {
-                ResetPasswordButton.Dispose ();
-                ResetPasswordButton = null;
+            if (SignUpButton != null) {
+                SignUpButton.Dispose ();
+                SignUpButton = null;
             }
 
-            if (ResetPasswordTitle != null) {
-                ResetPasswordTitle.Dispose ();
-                ResetPasswordTitle = null;
-            }
-
-            if (SendVerificationCodeButton != null) {
-                SendVerificationCodeButton.Dispose ();
-                SendVerificationCodeButton = null;
-            }
-
-            if (SigninIdLabel != null) {
-                SigninIdLabel.Dispose ();
-                SigninIdLabel = null;
-            }
-
-            if (SignInIdTextField != null) {
-                SignInIdTextField.Dispose ();
-                SignInIdTextField = null;
-            }
-
-            if (SignInView != null) {
-                SignInView.Dispose ();
-                SignInView = null;
+            if (SignUpTitle != null) {
+                SignUpTitle.Dispose ();
+                SignUpTitle = null;
             }
 
             if (VerificationCodeTextField != null) {

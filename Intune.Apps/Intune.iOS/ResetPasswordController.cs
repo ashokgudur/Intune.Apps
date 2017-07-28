@@ -14,9 +14,9 @@ namespace Intune.iOS
 
         public override void ViewDidLoad()
         {
-            MessageLabel.Text = "";
             base.ViewDidLoad();
-            VerifyOtpView.Hidden = true;
+			MessageLabel.Text = "";
+			VerifyOtpView.Hidden = true;
             NewPasswordView.Hidden = true;
         }
 
@@ -41,7 +41,7 @@ namespace Intune.iOS
                     IntuneService.SendMobileOtp(mnv.GetIsdCodeWithoutPlus(), mnv.GetMobileNumberWithoutIsdCode());
                 }
 
-                MessageLabel.Text = "Verification code sent. Please enter verify it.";
+                MessageLabel.Text = "Verification code sent. Please verify.";
                 VerifyOtpView.Hidden = false;
             }
             catch (Exception ex)
@@ -114,6 +114,7 @@ namespace Intune.iOS
 
                 IntuneService.ResetPassword(user);
 				MessageLabel.Text = "Resetting password successful";
+				NavigationController.PopViewController(true);
 			}
 			catch (Exception ex)
 			{
