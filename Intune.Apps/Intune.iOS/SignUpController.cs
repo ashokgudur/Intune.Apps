@@ -23,6 +23,8 @@ namespace Intune.iOS
         {
             try
             {
+                LoginIdTextField.ResignFirstResponder();
+
                 var loginId = LoginIdTextField.Text.Trim();
                 if (string.IsNullOrWhiteSpace(loginId))
                 {

@@ -44,13 +44,27 @@ namespace Intune.iOS
                 if (user == null)
                     MessageLabel.Text = "Cannot Login";
                 else
-                    MessageLabel.Text = user.Name;
+                {
+                    navigateToMainViewController();
+                }
             }
             catch (Exception ex)
             {
                 MessageLabel.Text = ex.Message;
             }
         }
+
+		private void navigateToMainViewController()
+        {
+            var mainController = this.Storyboard
+							     .InstantiateViewController("MainTabBarController")
+                                    as UITabBarController;
+			if (mainController != null)
+			{
+				this.Title = "Sign-in";
+				this.NavigationController.PushViewController(mainController, true);
+			}
+		}
 
         partial void ForgotPasswordButton_TouchUpInside(UIButton sender)
         {

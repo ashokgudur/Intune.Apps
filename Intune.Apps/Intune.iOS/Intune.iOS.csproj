@@ -122,12 +122,34 @@
     <Compile Include="SignUpController.designer.cs">
       <DependentUpon>SignUpController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContactsController.cs" />
+    <Compile Include="ContactsController.designer.cs">
+      <DependentUpon>ContactsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactsTableViewCell.cs" />
+    <Compile Include="ContactsTableViewCell.designer.cs">
+      <DependentUpon>ContactsTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactsTableViewSource.cs" />
+    <Compile Include="AccountrsController.cs" />
+    <Compile Include="AccountrsController.designer.cs">
+      <DependentUpon>AccountrsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsTableViewCell.cs" />
+    <Compile Include="AccountsTableViewCell.designer.cs">
+      <DependentUpon>AccountsTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsTableViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intune.Shared\Intune.Shared.csproj">
       <Project>{3BD64A75-2AD8-45CA-9310-E7025A2A46E8}</Project>
       <Name>Intune.Shared</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\accounts.png" />
+    <BundleResource Include="Resources\contacts.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

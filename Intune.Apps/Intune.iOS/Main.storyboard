@@ -116,7 +116,7 @@
                         <outlet property="SignInView" destination="227" id="name-outlet-227"/>
                     </connections>
                     <navigationItem id="136" key="navigationItem" title="Intune">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="230">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="230">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="12" translatesAutoresizingMaskIntoConstraints="NO" key="customView">
                                 <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16" weight="light"/>
@@ -131,7 +131,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="231">
+                        <barButtonItem key="leftBarButtonItem" style="done" id="231">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="34" translatesAutoresizingMaskIntoConstraints="NO" key="customView">
                                 <rect key="frame" x="0.0" y="0.0" width="122" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16" weight="light"/>
@@ -150,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1132" y="-62"/>
+            <point key="canvasLocation" x="-1358" y="10"/>
         </scene>
         <scene sceneID="52">
             <objects>
@@ -166,7 +166,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1149" y="-79"/>
+            <point key="canvasLocation" x="-1448" y="-65"/>
         </scene>
         <scene sceneID="146">
             <objects>
@@ -357,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="149" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1083" y="-24"/>
+            <point key="canvasLocation" x="-1420" y="-40"/>
         </scene>
         <scene sceneID="192">
             <objects>
@@ -544,38 +544,194 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="194" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1108" y="-45"/>
+            <point key="canvasLocation" x="-1388" y="-17"/>
         </scene>
-        <scene sceneID="290">
+        <scene sceneID="847">
             <objects>
-                <tableViewController id="291" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="292">
+                <tabBarController id="848" sceneMemberID="viewController" storyboardIdentifier="MainTabBarController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="851">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue id="1786" destination="1728" kind="relationship" relationship="viewControllers"/>
+                        <segue id="1917" destination="1835" kind="relationship" relationship="viewControllers"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="852" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2005" y="-113"/>
+        </scene>
+        <scene sceneID="1727">
+            <objects>
+                <tableViewController id="1728" sceneMemberID="viewController" customClass="ContactsController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1729">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="295">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1732" customClass="ContactsTableViewCell" rowHeight="50" reuseIdentifier="ContactsTableViewCellId">
+                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="295" id="296">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1732" id="1733">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1797" translatesAutoresizingMaskIntoConstraints="NO" text="Full name">
+                                            <rect key="frame" x="16" y="0.0" width="277" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1805" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="16" y="24" width="174" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                            <nil key="highlightedColor"/>
+                                            <accessibility key="accessibilityConfiguration" hint="Mobile"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1808" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="0">
+                                            <rect key="frame" x="189" y="24" width="170" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.49803921568627452" green="0" blue="0.49803921568627452" alpha="1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intuned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1811" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="301" y="0.0" width="58" height="21"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="1797"/>
+                                            <exclude reference="1805"/>
+                                            <exclude reference="1808"/>
+                                            <exclude reference="1811"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="1797"/>
+                                            <include reference="1805"/>
+                                            <include reference="1808"/>
+                                            <include reference="1811"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="FullNameLabel" destination="1797" id="name-outlet-1797"/>
+                                    <outlet property="MobileLabel" destination="1805" id="name-outlet-1805"/>
+                                    <outlet property="AddressLabel" destination="1808" id="name-outlet-1808"/>
+                                    <outlet property="IsIntunedLabel" destination="1811" id="name-outlet-1811"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="291" id="293"/>
-                            <outlet property="delegate" destination="291" id="294"/>
+                            <outlet property="dataSource" destination="1728" id="1730"/>
+                            <outlet property="delegate" destination="1728" id="1731"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" id="1785" systemItem="contacts"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ContactsTableView" destination="1729" id="name-outlet-1729"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="297" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1734" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-683" y="-25"/>
+            <point key="canvasLocation" x="-970" y="36"/>
+        </scene>
+        <scene sceneID="1834">
+            <objects>
+                <tableViewController id="1835" sceneMemberID="viewController" customClass="AccountrsController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1836">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1839" rowHeight="56" reuseIdentifier="AccountsTableViewCellId" customClass="AccountsTableViewCell">
+                                <rect key="frame" x="0.0" y="27" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1839" id="1840">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1919" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="10" y="3" width="219" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1920" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="10" y="27" width="193" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.49803921568627452" green="0" blue="0.49803921568627452" alpha="1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1921" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="237" y="3" width="129" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance is receivable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1922" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="211" y="27" width="155" height="21"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                                            <color key="textColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="1919"/>
+                                            <exclude reference="1920"/>
+                                            <exclude reference="1921"/>
+                                            <exclude reference="1922"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="1919"/>
+                                            <include reference="1920"/>
+                                            <include reference="1921"/>
+                                            <include reference="1922"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="NameLabel" destination="1919" id="name-outlet-1919"/>
+                                    <outlet property="BalanceLabel" destination="1921" id="name-outlet-1921"/>
+                                    <outlet property="PermissionLabel" destination="1920" id="name-outlet-1920"/>
+                                    <outlet property="BalanceTypeLabel" destination="1922" id="name-outlet-1922"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1835" id="1837"/>
+                            <outlet property="delegate" destination="1835" id="1838"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Accounts" id="1916" image="accounts.png"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="AccountsTableView" destination="1836" id="name-outlet-1836"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1841" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1517" y="-194"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedScreenMetrics key="destination" type="retina47"/>
         <simulatedOrientationMetrics key="orientation"/>
     </simulatedMetricsContainer>
+    <resources>
+        <image name="accounts.png" width="32" height="32"/>
+        <image name="contacts.png" width="48" height="48"/>
+    </resources>
 </document>

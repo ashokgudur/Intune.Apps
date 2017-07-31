@@ -57,8 +57,8 @@ namespace Intune.Android
             accountBalance.Text = System.Math.Abs(account.Balance)
                                     .ToString("C2", CultureInfo.CurrentCulture);
 
-            var accountPersmission = view.FindViewById<TextView>(Resource.Id.accountPermissionTextView);
-            accountPersmission.Text = string.Format("You are {0}", account.Role.ToString());
+            var accountPermission = view.FindViewById<TextView>(Resource.Id.accountPermissionTextView);
+            accountPermission.Text = string.Format("You are {0}", account.Role.ToString());
 
             var txn = account.Balance == 0 ? account.HasEntries ? "++" : "NA"
                     : account.Balance > 0 ? getBalanceTitle(account, "Receivable") 
