@@ -122,19 +122,11 @@
     <Compile Include="SignUpController.designer.cs">
       <DependentUpon>SignUpController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContactsController.cs" />
-    <Compile Include="ContactsController.designer.cs">
-      <DependentUpon>ContactsController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ContactsTableViewCell.cs" />
     <Compile Include="ContactsTableViewCell.designer.cs">
       <DependentUpon>ContactsTableViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="ContactsTableViewSource.cs" />
-    <Compile Include="AccountrsController.cs" />
-    <Compile Include="AccountrsController.designer.cs">
-      <DependentUpon>AccountrsController.cs</DependentUpon>
-    </Compile>
     <Compile Include="AccountsTableViewCell.cs" />
     <Compile Include="AccountsTableViewCell.designer.cs">
       <DependentUpon>AccountsTableViewCell.cs</DependentUpon>

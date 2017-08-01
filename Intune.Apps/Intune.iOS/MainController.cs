@@ -58,7 +58,10 @@ namespace Intune.iOS
 
         private void NavigateToSignInView()
         {
-
+            var storyboard = UIStoryboard.FromName("Main", NSBundle.MainBundle);
+            var signInController = (UIViewController)storyboard.InstantiateViewController("SignInController");
+            DismissViewController(true, null);
+            PresentViewController(signInController, true, null);
         }
 
         private void SetAccountsTableViewSource()
@@ -101,8 +104,8 @@ namespace Intune.iOS
 
         private void ShowAlert(string message)
         {
-			//TODO: make this centralized alert to be used by throught the app
-			var alert = UIAlertController.Create("Intune", message, UIAlertControllerStyle.Alert);
+            //TODO: make this centralized alert to be used by throught the app
+            var alert = UIAlertController.Create("Intune", message, UIAlertControllerStyle.Alert);
             alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
             PresentViewController(alert, true, null);
         }
