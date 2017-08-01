@@ -136,6 +136,14 @@
     <Compile Include="MainController.designer.cs">
       <DependentUpon>MainController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContactController.cs" />
+    <Compile Include="ContactController.designer.cs">
+      <DependentUpon>ContactController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountController.cs" />
+    <Compile Include="AccountController.designer.cs">
+      <DependentUpon>AccountController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intune.Shared\Intune.Shared.csproj">

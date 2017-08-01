@@ -19,10 +19,6 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel IntuneLoginInTitle { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel MessageLabel { get; set; }
 
         [Outlet]
@@ -44,6 +40,10 @@ namespace Intune.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField SignInPasswordTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel SignInTitle { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -70,11 +70,6 @@ namespace Intune.iOS
             if (ForgotPasswordButton != null) {
                 ForgotPasswordButton.Dispose ();
                 ForgotPasswordButton = null;
-            }
-
-            if (IntuneLoginInTitle != null) {
-                IntuneLoginInTitle.Dispose ();
-                IntuneLoginInTitle = null;
             }
 
             if (MessageLabel != null) {
@@ -105,6 +100,11 @@ namespace Intune.iOS
             if (SignInPasswordTextField != null) {
                 SignInPasswordTextField.Dispose ();
                 SignInPasswordTextField = null;
+            }
+
+            if (SignInTitle != null) {
+                SignInTitle.Dispose ();
+                SignInTitle = null;
             }
 
             if (SignInView != null) {

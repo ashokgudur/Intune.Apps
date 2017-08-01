@@ -1,11 +1,13 @@
 ﻿using System;
-
+using Intune.Shared.Model;
 using UIKit;
 
 namespace Intune.iOS
 {
     public partial class SignInController : UIViewController
     {
+        private User SignInUser { get; set; }
+
         protected SignInController(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
@@ -21,11 +23,11 @@ namespace Intune.iOS
         {
             base.ViewDidLoad();
             MessageLabel.Text = "";
+            SignInUser = null;
 #if DEBUG
             SignInIdTextField.Text = "ashok.gudur@gmail.com";
             SignInPasswordTextField.Text = "ashokg";
 #endif
-
         }
 
         public override void DidReceiveMemoryWarning()
@@ -45,6 +47,7 @@ namespace Intune.iOS
                     MessageLabel.Text = "Cannot Login";
                 else
                 {
+                    SignInUser = user;
                     navigateToMainViewController();
                 }
             }
@@ -61,6 +64,7 @@ namespace Intune.iOS
                                     as MainController;
             if (mainController != null)
             {
+                mainController.SignInUser = SignInUser;
                 this.NavigationController.PresentViewController(mainController, true, null);
             }
         }
