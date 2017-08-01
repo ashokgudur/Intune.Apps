@@ -20,11 +20,23 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView AccountsTableView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem AddNewToolBarButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITabBarItem ContactsTabBarItem { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView ContactsTableView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView ContentView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -38,11 +50,25 @@ namespace Intune.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITabBarItem ProfileTabBarItem { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem RefreshToolBarButton { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (AccountsTabBarItem != null) {
                 AccountsTabBarItem.Dispose ();
                 AccountsTabBarItem = null;
+            }
+
+            if (AccountsTableView != null) {
+                AccountsTableView.Dispose ();
+                AccountsTableView = null;
+            }
+
+            if (AddNewToolBarButton != null) {
+                AddNewToolBarButton.Dispose ();
+                AddNewToolBarButton = null;
             }
 
             if (ContactsTabBarItem != null) {
@@ -53,6 +79,11 @@ namespace Intune.iOS
             if (ContactsTableView != null) {
                 ContactsTableView.Dispose ();
                 ContactsTableView = null;
+            }
+
+            if (ContentView != null) {
+                ContentView.Dispose ();
+                ContentView = null;
             }
 
             if (LogoutTabBarItem != null) {
@@ -68,6 +99,11 @@ namespace Intune.iOS
             if (ProfileTabBarItem != null) {
                 ProfileTabBarItem.Dispose ();
                 ProfileTabBarItem = null;
+            }
+
+            if (RefreshToolBarButton != null) {
+                RefreshToolBarButton.Dispose ();
+                RefreshToolBarButton = null;
             }
         }
     }
