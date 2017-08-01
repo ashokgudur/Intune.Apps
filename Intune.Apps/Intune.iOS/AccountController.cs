@@ -9,6 +9,7 @@ namespace Intune.iOS
     {
         public User SignInUser { get; set; }
         public Account Account { get; set; }
+        public MainController MainController { get; set; }
 
         public AccountController(IntPtr handle) : base(handle)
         {
@@ -17,8 +18,9 @@ namespace Intune.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-			MessageLabel.Text = "";
-			SetViewTitle();
+            MessageLabel.Text = "";
+            SetViewTitle();
+            NameTextField.Text = Account.Name;
             SaveButton.TouchUpInside += SaveButton_TouchUpInside;
             CancelButton.TouchUpInside += CancelButton_TouchUpInside;
         }
@@ -41,8 +43,14 @@ namespace Intune.iOS
             try
             {
                 ValidateUserInput();
-                IntuneService.AddAccount(FillObject());
-                DismissViewController(false, null);
+                FillObject();
+                if (Account.IsNew)
+                    IntuneService.AddAccount(Account);
+                else
+                    IntuneService.UpdateAccount(Account);
+
+                MainController.SetAccountsTableViewSource();
+				DismissViewController(false, null);
             }
             catch (Exception ex)
             {
@@ -50,14 +58,11 @@ namespace Intune.iOS
             }
         }
 
-        private Account FillObject()
+        private void FillObject()
         {
-            return new Account
-            {
-                Name = NameTextField.Text.Trim(),
-                UserId = SignInUser.Id,
-                AddedOn = DateTime.Now,
-            };
+            Account.Name = NameTextField.Text.Trim();
+            Account.UserId = SignInUser.Id;
+            Account.AddedOn = DateTime.Now;
         }
 
         private void ValidateUserInput()

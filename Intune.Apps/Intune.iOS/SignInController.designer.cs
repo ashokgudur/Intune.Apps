@@ -23,6 +23,10 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIActivityIndicatorView SignInActivityIndicator { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SignInButton { get; set; }
 
         [Outlet]
@@ -53,18 +57,6 @@ namespace Intune.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SignUpButton { get; set; }
 
-        [Action ("ForgotPasswordButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void ForgotPasswordButton_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("SignInButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void SignInButton_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("SignUpButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void SignUpButton_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (ForgotPasswordButton != null) {
@@ -75,6 +67,11 @@ namespace Intune.iOS
             if (MessageLabel != null) {
                 MessageLabel.Dispose ();
                 MessageLabel = null;
+            }
+
+            if (SignInActivityIndicator != null) {
+                SignInActivityIndicator.Dispose ();
+                SignInActivityIndicator = null;
             }
 
             if (SignInButton != null) {

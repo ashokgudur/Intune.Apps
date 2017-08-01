@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Intune.Shared.Model;
 using UIKit;
 
@@ -22,12 +24,22 @@ namespace Intune.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            HookEventHandlers();
+
             MessageLabel.Text = "";
             SignInUser = null;
+            SignInActivityIndicator.Hidden = true;
 #if DEBUG
             SignInIdTextField.Text = "ashok.gudur@gmail.com";
             SignInPasswordTextField.Text = "ashokg";
 #endif
+        }
+
+        private void HookEventHandlers()
+        {
+            SignInButton.TouchUpInside += SignInButton_TouchUpInsideAsync;
+            SignUpButton.TouchUpInside += SignUpButton_TouchUpInside;
+            ForgotPasswordButton.TouchUpInside += ForgotPasswordButton_TouchUpInside;
         }
 
         public override void DidReceiveMemoryWarning()
@@ -36,20 +48,83 @@ namespace Intune.iOS
             // Release any cached data, images, etc that aren't in use.
         }
 
-        partial void SignInButton_TouchUpInside(UIButton sender)
+        async void SignInButton_TouchUpInsideAsync(object sender, EventArgs e)
         {
             try
             {
+                SignInActivityIndicator.Hidden = false;
+                SignInActivityIndicator.StartAnimating();
+
+                DisplayStatusMessage("Trying to login to your Intune...", UIColor.Red);
+
+                DisableAllButtons();
                 var signInId = SignInIdTextField.Text;
                 var password = SignInPasswordTextField.Text;
-                var user = IntuneService.SignIn(signInId, password);
-                if (user == null)
-                    MessageLabel.Text = "Cannot Login";
-                else
-                {
-                    SignInUser = user;
-                    navigateToMainViewController();
-                }
+                await Task.Run(() => LaunchMainController(signInId, password));
+
+                SignInActivityIndicator.Hidden = true;
+                SignInActivityIndicator.StopAnimating();
+            }
+            catch (Exception ex)
+            {
+                EnableAllButtons();
+                DisplayStatusMessage(ex.Message, UIColor.Red);
+            }
+        }
+
+        private void DisplayStatusMessage(String text, UIColor color)
+        {
+            MessageLabel.Text = text;
+            MessageLabel.TextColor = color;
+        }
+
+        private void DisableAllButtons()
+        {
+            SignInButton.Enabled = false;
+            SignUpButton.Enabled = false;
+            ForgotPasswordButton.Enabled = false;
+        }
+
+        private void EnableAllButtons()
+        {
+            SignInButton.Enabled = true;
+            SignUpButton.Enabled = true;
+            ForgotPasswordButton.Enabled = true;
+        }
+
+        private void LaunchMainController(string signInId, string password)
+        {
+            var user = IntuneService.SignIn(signInId, password);
+            if (user == null)
+                BeginInvokeOnMainThread(() => MessageLabel.Text = "Cannot Login");
+            else
+            {
+                SignInUser = user;
+                BeginInvokeOnMainThread(() => NavigateToMainViewController());
+            }
+        }
+
+        private void NavigateToMainViewController()
+        {
+            var mainController = Storyboard.InstantiateViewController("MainController") as MainController;
+            if (mainController == null)
+                throw new Exception("Cannot find MainController");
+
+            mainController.SignInUser = SignInUser;
+            SignInActivityIndicator.StopAnimating();
+            NavigationController.PresentViewController(mainController, true, null);
+        }
+
+        void ForgotPasswordButton_TouchUpInside(object sender, EventArgs e)
+        {
+            try
+            {
+                var resetPasswordView = Storyboard.InstantiateViewController("ResetPasswordController") as ResetPasswordController;
+                if (resetPasswordView == null)
+                    throw new Exception("Cannot find ResetPasswordController");
+
+                Title = "Sign-in";
+                NavigationController.PushViewController(resetPasswordView, true);
             }
             catch (Exception ex)
             {
@@ -57,49 +132,16 @@ namespace Intune.iOS
             }
         }
 
-        private void navigateToMainViewController()
-        {
-            var mainController = this.Storyboard
-                                 .InstantiateViewController("MainController")
-                                    as MainController;
-            if (mainController != null)
-            {
-                mainController.SignInUser = SignInUser;
-                this.NavigationController.PresentViewController(mainController, true, null);
-            }
-        }
-
-        partial void ForgotPasswordButton_TouchUpInside(UIButton sender)
+        void SignUpButton_TouchUpInside(object sender, EventArgs e)
         {
             try
             {
-                var resetPasswordView = this.Storyboard
-                                        .InstantiateViewController("ResetPasswordController")
-                                        as ResetPasswordController;
-                if (resetPasswordView != null)
-                {
-                    this.Title = "Sign-in";
-                    this.NavigationController.PushViewController(resetPasswordView, true);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageLabel.Text = ex.Message;
-            }
-        }
+                var signUpView = Storyboard.InstantiateViewController("SignUpController") as SignUpController;
+                if (signUpView == null)
+                    throw new Exception("Cannot find SignUpController");
 
-        partial void SignUpButton_TouchUpInside(UIButton sender)
-        {
-            try
-            {
-                var signUpView = this.Storyboard
-                                        .InstantiateViewController("SignUpController")
-                                        as SignUpController;
-                if (signUpView != null)
-                {
-                    this.Title = "Sign-in";
-                    this.NavigationController.PushViewController(signUpView, true);
-                }
+                Title = "Sign-in";
+                NavigationController.PushViewController(signUpView, true);
             }
             catch (Exception ex)
             {

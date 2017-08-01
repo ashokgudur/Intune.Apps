@@ -26,6 +26,7 @@ namespace Intune.iOS
             LayoutViewContent();
             SetContactsTableViewSource();
             SetAccountsTableViewSource();
+            MainViewTabBar.SelectedItem = AccountsTabBarItem;
             DisplayAccountsView();
         }
 
@@ -67,18 +68,18 @@ namespace Intune.iOS
             PresentViewController(signInController, true, null);
         }
 
-        private void SetAccountsTableViewSource()
+        public void SetAccountsTableViewSource()
         {
             //TODO: contactId would come from contacts to display accounts of a given contact
             const int contactId = 0;
             var accounts = IntuneService.GetAllAccounts(SignInUser.Id, contactId);
-            AccountsTableView.Source = new AccountsTableViewSource(accounts);
+            AccountsTableView.Source = new AccountsTableViewSource(this, accounts);
         }
 
-        private void SetContactsTableViewSource()
+        public void SetContactsTableViewSource()
         {
             var contacts = IntuneService.GetAllContacts(SignInUser.Id);
-            ContactsTableView.Source = new ContactsTableViewSource(contacts);
+            ContactsTableView.Source = new ContactsTableViewSource(this, contacts);
         }
 
         private void MainViewTabBar_ItemSelected(object sender, UITabBarItemEventArgs e)
@@ -107,9 +108,9 @@ namespace Intune.iOS
             try
             {
                 if (MainViewTabBar.SelectedItem.Tag == accountsViewTagId)
-                    DisplayAccountController();
+                    DisplayAccountController(new Account());
                 else if (MainViewTabBar.SelectedItem.Tag == contactsViewTagId)
-                    DisplayContactController();
+                    DisplayContactController(new Contact());
             }
             catch (Exception ex)
             {
@@ -117,32 +118,28 @@ namespace Intune.iOS
             }
         }
 
-        private void DisplayAccountController()
+        public void DisplayAccountController(Account account)
         {
-            var accountController = this.Storyboard
-                                    .InstantiateViewController("AccountController")
-                                    as AccountController;
-            if (accountController != null)
-            {
-                accountController.SignInUser = SignInUser;
-                accountController.Account = new Account();
-				PresentViewController(accountController, true, null);
-                SetAccountsTableViewSource();
-            }
+            var accountController = Storyboard.InstantiateViewController("AccountController") as AccountController;
+            if (accountController == null)
+                throw new Exception("Could not find the view controller by Id: 'AccountController'");
+
+            accountController.MainController = this;
+            accountController.SignInUser = SignInUser;
+            accountController.Account = account;
+            PresentViewController(accountController, true, null);
         }
 
-        private void DisplayContactController()
+        public void DisplayContactController(Contact contact)
         {
-            var contactController = this.Storyboard
-                                    .InstantiateViewController("ContactController")
-                                    as ContactController;
-            if (contactController != null)
-            {
-                contactController.SignInUser = SignInUser;
-                contactController.Contact = new Contact();
-				PresentViewController(contactController, true, null);
-                SetContactsTableViewSource();
-            }
+            var contactController = Storyboard.InstantiateViewController("ContactController") as ContactController;
+            if (contactController == null)
+                throw new Exception("Could not find the view controller by Id: 'ContactController'");
+
+			contactController.MainController = this;
+			contactController.SignInUser = SignInUser;
+            contactController.Contact = contact;
+            PresentViewController(contactController, true, null);
         }
 
         private void RefreshToolBarButton_Clicked(object sender, EventArgs e)
