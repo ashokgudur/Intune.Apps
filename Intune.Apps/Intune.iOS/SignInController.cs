@@ -61,8 +61,6 @@ namespace Intune.iOS
                                     as MainController;
             if (mainController != null)
             {
-                this.Title = "Logout";
-                //this.NavigationController.PushViewController(mainController, true);
                 this.NavigationController.PresentViewController(mainController, true, null);
             }
         }

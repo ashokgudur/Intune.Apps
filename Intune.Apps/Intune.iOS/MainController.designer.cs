@@ -44,6 +44,10 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UINavigationBar MainViewNavigationBar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITabBar MainViewTabBar { get; set; }
 
         [Outlet]
@@ -89,6 +93,11 @@ namespace Intune.iOS
             if (LogoutTabBarItem != null) {
                 LogoutTabBarItem.Dispose ();
                 LogoutTabBarItem = null;
+            }
+
+            if (MainViewNavigationBar != null) {
+                MainViewNavigationBar.Dispose ();
+                MainViewNavigationBar = null;
             }
 
             if (MainViewTabBar != null) {

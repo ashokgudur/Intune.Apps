@@ -757,6 +757,7 @@
                         <outlet property="AccountsTableView" destination="2005" id="name-outlet-2005"/>
                         <outlet property="AddNewToolBarButton" destination="1945" id="name-outlet-1945"/>
                         <outlet property="RefreshToolBarButton" destination="1966" id="name-outlet-1966"/>
+                        <outlet property="MainViewNavigationBar" destination="1946" id="name-outlet-1946"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1937" userLabel="First Responder" sceneMemberID="firstResponder"/>

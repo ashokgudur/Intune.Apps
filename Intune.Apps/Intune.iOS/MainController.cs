@@ -19,41 +19,41 @@ namespace Intune.iOS
         {
             base.ViewDidLoad();
 
+            HookEventHandlers();
+            LayoutViewContent();
+            SetContactsTableViewSource();
+            SetAccountsTableViewSource();
+            DisplayAccountsView();
+        }
+
+        private void HookEventHandlers()
+        {
             AddNewToolBarButton.Clicked += AddNewToolBarButton_Clicked;
             RefreshToolBarButton.Clicked += RefreshToolBarButton_Clicked;
+			MainViewTabBar.ItemSelected += MainViewTabBar_ItemSelected;
+		}
 
+        private void LayoutViewContent()
+        {
             var contentViewFrame = ContentView.Frame;
             contentViewFrame.X = 0;
             contentViewFrame.Y = 0;
             ContactsTableView.Frame = contentViewFrame;
             AccountsTableView.Frame = contentViewFrame;
+        }
+
+        private void DisplayContactsView()
+        {
+            this.MainViewNavigationBar.TopItem.Title = "Intune - Contacts";
+            AccountsTableView.Hidden = true;
+            ContactsTableView.Hidden = false;
+        }
+
+        private void DisplayAccountsView()
+        {
+            this.MainViewNavigationBar.TopItem.Title = "Intune - Accounts";
             ContactsTableView.Hidden = true;
-
-            SetContactsTableViewSource();
-            SetAccountsTableViewSource();
-
-            MainViewTabBar.ItemSelected += (object sender, UITabBarItemEventArgs e) =>
-            {
-                switch (e.Item.Tag)
-                {
-                    case accountsViewTagId:
-                        ContactsTableView.Hidden = true;
-                        AccountsTableView.Hidden = false;
-                        break;
-                    case contactsViewTagId:
-                        AccountsTableView.Hidden = true;
-                        ContactsTableView.Hidden = false;
-                        break;
-                    case userProfileViewTagId:
-                        ShowAlert("User Profile...");
-                        break;
-                    case logoutViewTagId:
-                        NavigateToSignInView();
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-            };
+            AccountsTableView.Hidden = false;
         }
 
         private void NavigateToSignInView()
@@ -81,6 +81,27 @@ namespace Intune.iOS
             var contacts = IntuneService.GetAllContacts(userId);
             ContactsTableView.Source = new ContactsTableViewSource(contacts);
         }
+
+        private void MainViewTabBar_ItemSelected(object sender, UITabBarItemEventArgs e)
+        {
+			switch (e.Item.Tag)
+			{
+				case accountsViewTagId:
+					DisplayAccountsView();
+					break;
+				case contactsViewTagId:
+					DisplayContactsView();
+					break;
+				case userProfileViewTagId:
+					ShowAlert("User Profile...");
+					break;
+				case logoutViewTagId:
+					NavigateToSignInView();
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+		}
 
         private void AddNewToolBarButton_Clicked(object sender, EventArgs e)
         {
