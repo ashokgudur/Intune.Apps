@@ -54,30 +54,31 @@ namespace Intune.iOS
             }
         }
 
-		private void navigateToMainViewController()
+        private void navigateToMainViewController()
         {
             var mainController = this.Storyboard
-							     .InstantiateViewController("MainTabBarController")
-                                    as UITabBarController;
-			if (mainController != null)
-			{
-				this.Title = "Sign-in";
-				this.NavigationController.PushViewController(mainController, true);
-			}
-		}
+                                 .InstantiateViewController("MainController")
+                                    as MainController;
+            if (mainController != null)
+            {
+                this.Title = "Logout";
+                //this.NavigationController.PushViewController(mainController, true);
+                this.NavigationController.PresentViewController(mainController, true, null);
+            }
+        }
 
         partial void ForgotPasswordButton_TouchUpInside(UIButton sender)
         {
             try
             {
                 var resetPasswordView = this.Storyboard
-                                        .InstantiateViewController("ResetPasswordController") 
+                                        .InstantiateViewController("ResetPasswordController")
                                         as ResetPasswordController;
-				if (resetPasswordView != null)
-				{
+                if (resetPasswordView != null)
+                {
                     this.Title = "Sign-in";
                     this.NavigationController.PushViewController(resetPasswordView, true);
-				}
+                }
             }
             catch (Exception ex)
             {
@@ -87,21 +88,21 @@ namespace Intune.iOS
 
         partial void SignUpButton_TouchUpInside(UIButton sender)
         {
-			try
-			{
-				var signUpView = this.Storyboard
-										.InstantiateViewController("SignUpController")
-										as SignUpController;
+            try
+            {
+                var signUpView = this.Storyboard
+                                        .InstantiateViewController("SignUpController")
+                                        as SignUpController;
                 if (signUpView != null)
-				{
-					this.Title = "Sign-in";
+                {
+                    this.Title = "Sign-in";
                     this.NavigationController.PushViewController(signUpView, true);
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageLabel.Text = ex.Message;
-			}
-		}
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageLabel.Text = ex.Message;
+            }
+        }
     }
 }

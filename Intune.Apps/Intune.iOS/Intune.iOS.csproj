@@ -140,6 +140,10 @@
       <DependentUpon>AccountsTableViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountsTableViewSource.cs" />
+    <Compile Include="MainController.cs" />
+    <Compile Include="MainController.designer.cs">
+      <DependentUpon>MainController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intune.Shared\Intune.Shared.csproj">
@@ -150,6 +154,8 @@
   <ItemGroup>
     <BundleResource Include="Resources\accounts.png" />
     <BundleResource Include="Resources\contacts.png" />
+    <BundleResource Include="Resources\logout.png" />
+    <BundleResource Include="Resources\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
