@@ -19,20 +19,20 @@ namespace Intune.iOS
         {
             base.ViewWillAppear(animated);
             Title = "Intune";
-        }
+			EnableAllButtons();
+			MessageLabel.Text = "";
+			SignInUser = null;
+			SignInActivityIndicator.Hidden = true;
+#if DEBUG
+			SignInIdTextField.Text = "ashok.gudur@gmail.com";
+			SignInPasswordTextField.Text = "ashokg";
+#endif
+		}
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             HookEventHandlers();
-
-            MessageLabel.Text = "";
-            SignInUser = null;
-            SignInActivityIndicator.Hidden = true;
-#if DEBUG
-            SignInIdTextField.Text = "ashok.gudur@gmail.com";
-            SignInPasswordTextField.Text = "ashokg";
-#endif
         }
 
         private void HookEventHandlers()

@@ -9,7 +9,6 @@ namespace Intune.iOS
     {
         public User SignInUser { get; set; }
         public Contact Contact { get; set; }
-        public MainController MainController { get; set; }
 
 		public ContactController(IntPtr handle) : base(handle)
         {
@@ -57,7 +56,6 @@ namespace Intune.iOS
                 else
                     IntuneService.UpdateContact(Contact);
                 
-                MainController.SetContactsTableViewSource();
                 DismissViewController(false, null);
             }
             catch (Exception ex)

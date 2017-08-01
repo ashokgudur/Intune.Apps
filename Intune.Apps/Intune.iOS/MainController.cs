@@ -18,6 +18,16 @@ namespace Intune.iOS
         {
         }
 
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+
+            if (MainViewTabBar.SelectedItem.Tag == accountsViewTagId)
+                SetAccountsTableViewSource();
+            else if (MainViewTabBar.SelectedItem.Tag == contactsViewTagId)
+                SetContactsTableViewSource();
+        }
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -25,7 +35,6 @@ namespace Intune.iOS
             HookEventHandlers();
             LayoutViewContent();
             SetContactsTableViewSource();
-            SetAccountsTableViewSource();
             MainViewTabBar.SelectedItem = AccountsTabBarItem;
             DisplayAccountsView();
         }
@@ -124,7 +133,6 @@ namespace Intune.iOS
             if (accountController == null)
                 throw new Exception("Could not find the view controller by Id: 'AccountController'");
 
-            accountController.MainController = this;
             accountController.SignInUser = SignInUser;
             accountController.Account = account;
             PresentViewController(accountController, true, null);
@@ -136,8 +144,7 @@ namespace Intune.iOS
             if (contactController == null)
                 throw new Exception("Could not find the view controller by Id: 'ContactController'");
 
-			contactController.MainController = this;
-			contactController.SignInUser = SignInUser;
+            contactController.SignInUser = SignInUser;
             contactController.Contact = contact;
             PresentViewController(contactController, true, null);
         }

@@ -9,7 +9,6 @@ namespace Intune.iOS
     {
         public User SignInUser { get; set; }
         public Account Account { get; set; }
-        public MainController MainController { get; set; }
 
         public AccountController(IntPtr handle) : base(handle)
         {
@@ -49,7 +48,6 @@ namespace Intune.iOS
                 else
                     IntuneService.UpdateAccount(Account);
 
-                MainController.SetAccountsTableViewSource();
 				DismissViewController(false, null);
             }
             catch (Exception ex)
