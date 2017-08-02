@@ -31,6 +31,7 @@ namespace Intune.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            NavigationBar.TopItem.Title = Account.Name;
             AddRefreshControls();
             HookEventHandlers();
             SetAccountEntriesTableViewSource();
@@ -55,28 +56,34 @@ namespace Intune.iOS
 
         private void HookEventHandlers()
         {
+            CloseToolBarButton.Clicked += CloseToolBarButton_Clicked;
             AddNewToolBarButton.Clicked += AddNewToolBarButton_Clicked;
             RefreshToolBarButton.Clicked += RefreshToolBarButton_Clicked;
             CommentToolBarButton.Clicked += CommentToolBarButton_Clicked;
         }
 
+        void CloseToolBarButton_Clicked(object sender, EventArgs e)
+        {
+            DismissViewController(true, null);
+        }
+
         private void CommentToolBarButton_Clicked(object sender, EventArgs e)
         {
-			try
-			{
-				throw new NotImplementedException();
-			}
-			catch (Exception ex)
-			{
-				MessageAlert.Instance(this).Show(ex.Message);
-			}
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                MessageAlert.Instance(this).Show(ex.Message);
+            }
         }
 
         private void AddNewToolBarButton_Clicked(object sender, EventArgs e)
         {
             try
             {
-                //DisplayAccountEntryController(new Account());
+                DisplayAccountEntryController(new Entry());
             }
             catch (Exception ex)
             {
@@ -97,14 +104,14 @@ namespace Intune.iOS
         }
 
         public void DisplayAccountEntryController(Entry entry)
-		{
-   //         var controller = Storyboard.InstantiateViewController("AccountEntryController") as AccountEntryController;
-			//if (controller == null)
-			//	throw new Exception("Could not find 'AccountEntryController'");
+        {
+            //         var controller = Storyboard.InstantiateViewController("AccountEntryController") as AccountEntryController;
+            //if (controller == null)
+            //	throw new Exception("Could not find 'AccountEntryController'");
 
-			//controller.SignInUser = SignInUser;
-			//controller.Contact = contact;
-			//PresentViewController(controller, true, null);
-		}
-	}
+            //controller.SignInUser = SignInUser;
+            //controller.Contact = contact;
+            //PresentViewController(controller, true, null);
+        }
+    }
 }

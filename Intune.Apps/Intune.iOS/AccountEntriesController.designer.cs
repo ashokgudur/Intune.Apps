@@ -24,11 +24,15 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem CloseToolBarButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIBarButtonItem CommentToolBarButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UINavigationBar MainViewNavigationBar { get; set; }
+        UIKit.UINavigationBar NavigationBar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -46,14 +50,19 @@ namespace Intune.iOS
                 AddNewToolBarButton = null;
             }
 
+            if (CloseToolBarButton != null) {
+                CloseToolBarButton.Dispose ();
+                CloseToolBarButton = null;
+            }
+
             if (CommentToolBarButton != null) {
                 CommentToolBarButton.Dispose ();
                 CommentToolBarButton = null;
             }
 
-            if (MainViewNavigationBar != null) {
-                MainViewNavigationBar.Dispose ();
-                MainViewNavigationBar = null;
+            if (NavigationBar != null) {
+                NavigationBar.Dispose ();
+                NavigationBar = null;
             }
 
             if (RefreshToolBarButton != null) {
