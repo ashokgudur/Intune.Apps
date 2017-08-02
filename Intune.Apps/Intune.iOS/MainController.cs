@@ -143,22 +143,33 @@ namespace Intune.iOS
             }
         }
 
-        public void DisplayAccountController(Account account)
-        {
-            var accountController = Storyboard.InstantiateViewController("AccountController") as AccountController;
-            if (accountController == null)
-                throw new Exception("Could not find the view controller by Id: 'AccountController'");
+        private void DisplayAccountController(Account account)
+		{
+			var accountController = Storyboard.InstantiateViewController("AccountController") as AccountController;
+			if (accountController == null)
+				throw new Exception("Could not find 'AccountController'");
 
-            accountController.SignInUser = SignInUser;
-            accountController.Account = account;
-            PresentViewController(accountController, true, null);
+			accountController.SignInUser = SignInUser;
+			accountController.Account = account;
+			PresentViewController(accountController, true, null);
+		}
+
+		public void DisplayAccountEntriesController(Account account)
+        {
+            var accountEntriesController = Storyboard.InstantiateViewController("AccountEntriesController") as AccountEntriesController;
+            if (accountEntriesController == null)
+                throw new Exception("Could not find 'AccountEntriesController'");
+
+            accountEntriesController.SignInUser = SignInUser;
+            accountEntriesController.Account = account;
+            PresentViewController(accountEntriesController, true, null);
         }
 
         public void DisplayContactController(Contact contact)
         {
             var contactController = Storyboard.InstantiateViewController("ContactController") as ContactController;
             if (contactController == null)
-                throw new Exception("Could not find the view controller by Id: 'ContactController'");
+                throw new Exception("Could not find 'ContactController'");
 
             contactController.SignInUser = SignInUser;
             contactController.Contact = contact;

@@ -146,6 +146,15 @@
     </Compile>
     <Compile Include="ActionSheetAlert.cs" />
     <Compile Include="MessageAlert.cs" />
+    <Compile Include="AccountEntriesController.cs" />
+    <Compile Include="AccountEntriesController.designer.cs">
+      <DependentUpon>AccountEntriesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountEntriesTableViewCell.cs" />
+    <Compile Include="AccountEntriesTableViewCell.designer.cs">
+      <DependentUpon>AccountEntriesTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountEntriesTableViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intune.Shared\Intune.Shared.csproj">
@@ -158,6 +167,7 @@
     <BundleResource Include="Resources\contacts.png" />
     <BundleResource Include="Resources\logout.png" />
     <BundleResource Include="Resources\profile.png" />
+    <BundleResource Include="Resources\comment.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

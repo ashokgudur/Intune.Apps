@@ -24,7 +24,7 @@ namespace Intune.iOS
             switch (action)
             {
                 case AccountRowActionOptions.ViewOrEdit:
-                    mainController.DisplayAccountController(account);
+                    mainController.DisplayAccountEntriesController(account);
                     break;
                 case AccountRowActionOptions.MakeNewEntry:
                     break;
@@ -41,7 +41,6 @@ namespace Intune.iOS
         public const string ViewOrEdit = "View/Edit";
         public const string MakeNewEntry = "Make new entry";
         public const string Comment = "Comment";
-
     }
 
     public class AccountsTableViewSource : UITableViewSource

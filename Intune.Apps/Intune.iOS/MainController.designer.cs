@@ -28,6 +28,10 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem CommentToolBarButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITabBarItem ContactsTabBarItem { get; set; }
 
         [Outlet]
@@ -73,6 +77,11 @@ namespace Intune.iOS
             if (AddNewToolBarButton != null) {
                 AddNewToolBarButton.Dispose ();
                 AddNewToolBarButton = null;
+            }
+
+            if (CommentToolBarButton != null) {
+                CommentToolBarButton.Dispose ();
+                CommentToolBarButton = null;
             }
 
             if (ContactsTabBarItem != null) {
