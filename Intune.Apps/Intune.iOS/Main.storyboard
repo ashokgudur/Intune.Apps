@@ -591,15 +591,79 @@
                                 <rect key="frame" x="0.0" y="125" width="375" height="485"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1967" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1970" customClass="ContactsTableViewCell" rowHeight="50" reuseIdentifier="ContactsTableViewCellId">
+                                                <rect key="frame" x="0.0" y="28" width="263" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1970" id="1979">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1972" translatesAutoresizingMaskIntoConstraints="NO" text="Full name" fixedFrame="YES">
+                                                            <rect key="frame" x="10" y="0.0" width="292" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1974" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                            <rect key="frame" x="10" y="24" width="180" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <accessibility key="accessibilityConfiguration" hint="Mobile"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1976" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="0" fixedFrame="YES">
+                                                            <rect key="frame" x="189" y="24" width="179" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" colorSpace="calibratedRGB" red="0.49803921568627452" green="0" blue="0.49803921568627452" alpha="1"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intuned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1978" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                            <rect key="frame" x="310" y="0.0" width="58" height="21"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                                                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <variation key="default">
+                                                        <mask key="subviews">
+                                                            <exclude reference="1972"/>
+                                                            <exclude reference="1974"/>
+                                                            <exclude reference="1976"/>
+                                                            <exclude reference="1978"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="subviews">
+                                                            <include reference="1972"/>
+                                                            <include reference="1974"/>
+                                                            <include reference="1976"/>
+                                                            <include reference="1978"/>
+                                                        </mask>
+                                                    </variation>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="FullNameLabel" destination="1972" id="1971"/>
+                                                    <outlet property="MobileLabel" destination="1974" id="1973"/>
+                                                    <outlet property="AddressLabel" destination="1976" id="1975"/>
+                                                    <outlet property="IsIntunedLabel" destination="1978" id="1977"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
                                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2005" fixedFrame="YES">
-                                        <rect key="frame" x="20" y="20" width="263" height="283"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2009" rowHeight="56" reuseIdentifier="AccountsTableViewCellId" customClass="AccountsTableViewCell">
                                                 <rect key="frame" x="0.0" y="28" width="263" height="56"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2009" id="2018">
-                                                    <rect key="frame" x="0.0" y="0.0" width="263" height="55"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2011" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -656,70 +720,6 @@
                                             <outlet property="dataSource" destination="2007" id="2006"/>
                                             <outlet property="delegate" destination="2007" id="2008"/>
                                         </connections>
-                                    </tableView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1967" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                        <rect key="frame" x="40" y="180" width="263" height="283"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1970" customClass="ContactsTableViewCell" rowHeight="50" reuseIdentifier="ContactsTableViewCellId">
-                                                <rect key="frame" x="0.0" y="28" width="263" height="50"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1970" id="1979">
-                                                    <rect key="frame" x="0.0" y="0.0" width="263" height="49"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1972" translatesAutoresizingMaskIntoConstraints="NO" text="Full name" fixedFrame="YES">
-                                                            <rect key="frame" x="16" y="0.0" width="261" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1974" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                                            <rect key="frame" x="16" y="24" width="174" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <accessibility key="accessibilityConfiguration" hint="Mobile"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1976" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="0" fixedFrame="YES">
-                                                            <rect key="frame" x="189" y="24" width="154" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" colorSpace="calibratedRGB" red="0.49803921568627452" green="0" blue="0.49803921568627452" alpha="1"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intuned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1978" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                                            <rect key="frame" x="285" y="0.0" width="58" height="21"/>
-                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
-                                                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <variation key="default">
-                                                        <mask key="subviews">
-                                                            <exclude reference="1972"/>
-                                                            <exclude reference="1974"/>
-                                                            <exclude reference="1976"/>
-                                                            <exclude reference="1978"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
-                                                        <mask key="subviews">
-                                                            <include reference="1972"/>
-                                                            <include reference="1974"/>
-                                                            <include reference="1976"/>
-                                                            <include reference="1978"/>
-                                                        </mask>
-                                                    </variation>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="FullNameLabel" destination="1972" id="1971"/>
-                                                    <outlet property="MobileLabel" destination="1974" id="1973"/>
-                                                    <outlet property="AddressLabel" destination="1976" id="1975"/>
-                                                    <outlet property="IsIntunedLabel" destination="1978" id="1977"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
                                     </tableView>
                                 </subviews>
                                 <variation key="default">
@@ -779,7 +779,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2062" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="New Contact">
                                 <rect key="frame" x="44" y="76" width="287" height="30"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -940,7 +940,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2112" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="New Account">
                                 <rect key="frame" x="44" y="76" width="287" height="30"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>

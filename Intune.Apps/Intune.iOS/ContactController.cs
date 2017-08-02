@@ -37,7 +37,7 @@ namespace Intune.iOS
             if (Contact.IsNew)
                 ContactTitle.Text = "New Contact";
             else
-                ContactTitle.Text = $"Contact - {Contact.Name}";
+                ContactTitle.Text = Contact.Name;
         }
 
         void CancelButton_TouchUpInside(object sender, EventArgs e)

@@ -11,8 +11,10 @@ namespace Intune.iOS
         private const int contactsViewTagId = 2;
         private const int userProfileViewTagId = 3;
         private const int logoutViewTagId = 4;
+		private UIRefreshControl AccountsRefreshControl;
+        private UIRefreshControl ContactsRefreshControl;
 
-        public User SignInUser { get; set; }
+		public User SignInUser { get; set; }
 
         public MainController(IntPtr handle) : base(handle)
         {
@@ -31,7 +33,7 @@ namespace Intune.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
+            AddRefreshControls();
             HookEventHandlers();
             LayoutViewContent();
             SetContactsTableViewSource();
@@ -54,6 +56,20 @@ namespace Intune.iOS
             ContactsTableView.Frame = contentViewFrame;
             AccountsTableView.Frame = contentViewFrame;
         }
+
+        void AddRefreshControls()
+        {
+            if (!UIDevice.CurrentDevice.CheckSystemVersion(6, 0))
+                return;
+
+            AccountsRefreshControl = new UIRefreshControl();
+            AccountsRefreshControl.ValueChanged += (sender, e) => { RunAccountsRefreshControl(); };
+            AccountsTableView.Add(AccountsRefreshControl);
+
+			ContactsRefreshControl = new UIRefreshControl();
+			ContactsRefreshControl.ValueChanged += (sender, e) => { RunContactsRefreshControl(); };
+			ContactsTableView.Add(ContactsRefreshControl);
+		}
 
         private void DisplayContactsView()
         {
@@ -153,15 +169,34 @@ namespace Intune.iOS
         {
             try
             {
-                if (MainViewTabBar.SelectedItem.Tag == accountsViewTagId)
-                    SetAccountsTableViewSource();
-                else if (MainViewTabBar.SelectedItem.Tag == contactsViewTagId)
-                    SetContactsTableViewSource();
+                RefreshList();
             }
             catch (Exception ex)
             {
                 ShowAlert(ex.Message);
             }
+        }
+
+        void RunAccountsRefreshControl()
+        {
+            InvokeOnMainThread(() => { AccountsRefreshControl.BeginRefreshing(); });
+			SetAccountsTableViewSource();
+            InvokeOnMainThread(() => { AccountsRefreshControl.EndRefreshing(); });
+        }
+
+		void RunContactsRefreshControl()
+		{
+			InvokeOnMainThread(() => { ContactsRefreshControl.BeginRefreshing(); });
+			SetContactsTableViewSource();
+			InvokeOnMainThread(() => { ContactsRefreshControl.EndRefreshing(); });
+		}
+
+		private void RefreshList()
+        {
+            if (MainViewTabBar.SelectedItem.Tag == accountsViewTagId)
+                SetAccountsTableViewSource();
+            else if (MainViewTabBar.SelectedItem.Tag == contactsViewTagId)
+                SetContactsTableViewSource();
         }
 
         private void ShowAlert(string message)

@@ -29,7 +29,7 @@ namespace Intune.iOS
             if (Account.IsNew)
                 AccountTitle.Text = "New Account";
             else
-                AccountTitle.Text = $"Account - {Account.Name}";
+                AccountTitle.Text = Account.Name;
         }
 
         void CancelButton_TouchUpInside(object sender, EventArgs e)
