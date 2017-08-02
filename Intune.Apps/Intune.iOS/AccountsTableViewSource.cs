@@ -6,7 +6,45 @@ using UIKit;
 
 namespace Intune.iOS
 {
-    internal class AccountsTableViewSource : UITableViewSource
+    public class AccountActionSheetActionExecutor : IActionSheetActionExecutor
+    {
+        public UIViewController Controller { get; set; }
+        private MainController mainController { get; set; }
+        public Account account;
+
+        public AccountActionSheetActionExecutor(UIViewController controller, Account account)
+        {
+            this.Controller = controller;
+            this.account = account;
+            mainController = controller as MainController;
+        }
+
+        public void Execute(string action)
+        {
+            switch (action)
+            {
+                case AccountRowActionOptions.ViewOrEdit:
+                    mainController.DisplayAccountController(account);
+                    break;
+                case AccountRowActionOptions.MakeNewEntry:
+                    break;
+                case AccountRowActionOptions.Comment:
+                    break;
+                default:
+                    throw new Exception($"Invalid option '{action}'");
+            }
+        }
+    }
+
+    public class AccountRowActionOptions
+    {
+        public const string ViewOrEdit = "View/Edit";
+        public const string MakeNewEntry = "Make new entry";
+        public const string Comment = "Comment";
+
+    }
+
+    public class AccountsTableViewSource : UITableViewSource
     {
         private List<Account> accounts;
         private MainController mainController;
@@ -20,8 +58,22 @@ namespace Intune.iOS
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
             var account = accounts[indexPath.Row];
-            mainController.DisplayAccountController(account);
             tableView.DeselectRow(indexPath, true);
+            ShowActionSheetAlert(account);
+        }
+
+        private void ShowActionSheetAlert(Account account)
+        {
+            var actionExecutor = new AccountActionSheetActionExecutor(mainController, account);
+            var alert = ActionSheetAlert.Instance(actionExecutor);
+            var options = new string[]
+            {
+                AccountRowActionOptions.ViewOrEdit,
+                AccountRowActionOptions.MakeNewEntry,
+                AccountRowActionOptions.Comment,
+            };
+
+            alert.Show("What to do you want to do?", options, account.Name);
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)

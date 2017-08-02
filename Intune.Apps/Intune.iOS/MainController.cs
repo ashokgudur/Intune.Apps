@@ -11,10 +11,10 @@ namespace Intune.iOS
         private const int contactsViewTagId = 2;
         private const int userProfileViewTagId = 3;
         private const int logoutViewTagId = 4;
-		private UIRefreshControl AccountsRefreshControl;
+        private UIRefreshControl AccountsRefreshControl;
         private UIRefreshControl ContactsRefreshControl;
 
-		public User SignInUser { get; set; }
+        public User SignInUser { get; set; }
 
         public MainController(IntPtr handle) : base(handle)
         {
@@ -66,10 +66,10 @@ namespace Intune.iOS
             AccountsRefreshControl.ValueChanged += (sender, e) => { RunAccountsRefreshControl(); };
             AccountsTableView.Add(AccountsRefreshControl);
 
-			ContactsRefreshControl = new UIRefreshControl();
-			ContactsRefreshControl.ValueChanged += (sender, e) => { RunContactsRefreshControl(); };
-			ContactsTableView.Add(ContactsRefreshControl);
-		}
+            ContactsRefreshControl = new UIRefreshControl();
+            ContactsRefreshControl.ValueChanged += (sender, e) => { RunContactsRefreshControl(); };
+            ContactsTableView.Add(ContactsRefreshControl);
+        }
 
         private void DisplayContactsView()
         {
@@ -118,7 +118,7 @@ namespace Intune.iOS
                     DisplayContactsView();
                     break;
                 case userProfileViewTagId:
-                    ShowAlert("User Profile...");
+					MessageAlert.Instance(this).Show("User Profile...");
                     break;
                 case logoutViewTagId:
                     NavigateToSignInView();
@@ -139,7 +139,7 @@ namespace Intune.iOS
             }
             catch (Exception ex)
             {
-                ShowAlert(ex.Message);
+				MessageAlert.Instance(this).Show(ex.Message);
             }
         }
 
@@ -173,38 +173,30 @@ namespace Intune.iOS
             }
             catch (Exception ex)
             {
-                ShowAlert(ex.Message);
+                MessageAlert.Instance(this).Show(ex.Message);
             }
         }
 
         void RunAccountsRefreshControl()
         {
             InvokeOnMainThread(() => { AccountsRefreshControl.BeginRefreshing(); });
-			SetAccountsTableViewSource();
+            SetAccountsTableViewSource();
             InvokeOnMainThread(() => { AccountsRefreshControl.EndRefreshing(); });
         }
 
-		void RunContactsRefreshControl()
-		{
-			InvokeOnMainThread(() => { ContactsRefreshControl.BeginRefreshing(); });
-			SetContactsTableViewSource();
-			InvokeOnMainThread(() => { ContactsRefreshControl.EndRefreshing(); });
-		}
+        void RunContactsRefreshControl()
+        {
+            InvokeOnMainThread(() => { ContactsRefreshControl.BeginRefreshing(); });
+            SetContactsTableViewSource();
+            InvokeOnMainThread(() => { ContactsRefreshControl.EndRefreshing(); });
+        }
 
-		private void RefreshList()
+        private void RefreshList()
         {
             if (MainViewTabBar.SelectedItem.Tag == accountsViewTagId)
                 SetAccountsTableViewSource();
             else if (MainViewTabBar.SelectedItem.Tag == contactsViewTagId)
                 SetContactsTableViewSource();
-        }
-
-        private void ShowAlert(string message)
-        {
-            //TODO: make this centralized alert to be used throught the app
-            var alert = UIAlertController.Create("Intune", message, UIAlertControllerStyle.Alert);
-            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-            PresentViewController(alert, true, null);
         }
     }
 }

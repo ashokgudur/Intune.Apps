@@ -144,6 +144,8 @@
     <Compile Include="AccountController.designer.cs">
       <DependentUpon>AccountController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActionSheetAlert.cs" />
+    <Compile Include="MessageAlert.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intune.Shared\Intune.Shared.csproj">
