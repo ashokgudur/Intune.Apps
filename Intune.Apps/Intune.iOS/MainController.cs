@@ -30,6 +30,30 @@ namespace Intune.iOS
                 SetContactsTableViewSource();
         }
 
+        public void DisplayContactChatController(Contact contact)
+        {
+            //TODO: ...
+			//var contactController = Storyboard.InstantiateViewController("ContactController") as ContactController;
+			//if (contactController == null)
+			//	throw new Exception("Could not find 'ContactController'");
+
+			//contactController.SignInUser = SignInUser;
+			//contactController.Contact = contact;
+			//PresentViewController(contactController, true, null);
+		}
+
+        public void DisplayAccountCommentController(Account account)
+        {
+			//TODO: ...
+			//var contactController = Storyboard.InstantiateViewController("ContactController") as ContactController;
+			//if (contactController == null)
+			//  throw new Exception("Could not find 'ContactController'");
+
+			//contactController.SignInUser = SignInUser;
+			//contactController.Contact = contact;
+			//PresentViewController(contactController, true, null);
+		}
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -118,7 +142,7 @@ namespace Intune.iOS
                     DisplayContactsView();
                     break;
                 case userProfileViewTagId:
-					MessageAlert.Instance(this).Show("User Profile...");
+                    MessageAlert.Instance(this).Show("User Profile...");
                     break;
                 case logoutViewTagId:
                     NavigateToSignInView();
@@ -139,22 +163,22 @@ namespace Intune.iOS
             }
             catch (Exception ex)
             {
-				MessageAlert.Instance(this).Show(ex.Message);
+                MessageAlert.Instance(this).Show(ex.Message);
             }
         }
 
-        private void DisplayAccountController(Account account)
-		{
-			var accountController = Storyboard.InstantiateViewController("AccountController") as AccountController;
-			if (accountController == null)
-				throw new Exception("Could not find 'AccountController'");
+        public void DisplayAccountController(Account account)
+        {
+            var accountController = Storyboard.InstantiateViewController("AccountController") as AccountController;
+            if (accountController == null)
+                throw new Exception("Could not find 'AccountController'");
 
-			accountController.SignInUser = SignInUser;
-			accountController.Account = account;
-			PresentViewController(accountController, true, null);
-		}
+            accountController.SignInUser = SignInUser;
+            accountController.Account = account;
+            PresentViewController(accountController, true, null);
+        }
 
-		public void DisplayAccountEntriesController(Account account)
+        public void DisplayAccountEntriesController(Account account)
         {
             var accountEntriesController = Storyboard.InstantiateViewController("AccountEntriesController") as AccountEntriesController;
             if (accountEntriesController == null)

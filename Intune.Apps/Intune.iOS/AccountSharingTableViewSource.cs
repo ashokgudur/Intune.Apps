@@ -17,12 +17,11 @@ namespace Intune.iOS
             this.contacts = contacts;
         }
 
-        //public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
-        //{
-        //    var contact = contacts[indexPath.Row];
-        //    tableView.DeselectRow(indexPath, true);
-        //    mainController.DisplayAccountEntriesController(contact);
-        //}
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            var contact = contacts[indexPath.Row];
+            tableView.DeselectRow(indexPath, true);
+        }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {

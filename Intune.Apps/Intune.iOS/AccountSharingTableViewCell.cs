@@ -11,7 +11,7 @@ namespace Intune.iOS
         {
         }
 
-        internal void FillTableViewCell(Contact contact)
+        public void FillTableViewCell(Contact contact)
         {
             ContactNameLabel.Text = contact.Name;
 
@@ -19,7 +19,12 @@ namespace Intune.iOS
             if (contact.HasIntune())
                 PermissionSegement.SelectedSegment = (int)contact.AccountSharedRole;
             else
-				PermissionSegement.SelectedSegment = 0;
-		}
-    }
+                PermissionSegement.SelectedSegment = 0;
+
+            PermissionSegement.ValueChanged += (sender, e) =>
+            {
+                contact.AccountSharedRole = (UserAccountRole)(int)PermissionSegement.SelectedSegment;
+            };
+        }
+	}
 }

@@ -27,6 +27,7 @@ namespace Intune.iOS
                     mainController.DisplayContactController(contact);
 					break;
                 case ContactRowActionOptions.Chat:
+					mainController.DisplayContactChatController(contact);
 					break;
 				default:
 					throw new Exception($"Invalid option '{action}'");

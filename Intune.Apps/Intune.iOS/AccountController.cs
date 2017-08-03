@@ -2,6 +2,8 @@ using Foundation;
 using System;
 using UIKit;
 using Intune.Shared.Model;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Intune.iOS
 {
@@ -9,6 +11,7 @@ namespace Intune.iOS
     {
         public User SignInUser { get; set; }
         public Account Account { get; set; }
+        private List<Contact> contacts; 
 
         public AccountController(IntPtr handle) : base(handle)
         {
@@ -28,7 +31,7 @@ namespace Intune.iOS
 
         public void SetAccountSharingTableViewSource()
         {
-            var contacts = IntuneService.GetAccountSharedContacts(SignInUser.Id, Account.Id);
+            contacts = IntuneService.GetAccountSharedContacts(SignInUser.Id, Account.Id);
             AccountSharingTableView.Source = new AccountSharingTableViewSource(this, contacts);
         }
 
@@ -69,6 +72,7 @@ namespace Intune.iOS
                 else
                     IntuneService.UpdateAccount(Account);
 
+                SaveAccountSharing();
                 DismissViewController(false, null);
             }
             catch (Exception ex)
@@ -76,6 +80,22 @@ namespace Intune.iOS
                 MessageLabel.Text = ex.Message;
             }
         }
+
+        private void SaveAccountSharing()
+        {
+			var accountShares = new List<UserAccountShareRole>();
+			var sharedUsers = contacts.Where(c => c.ContactUserId > 0 &&
+	                 						 c.AccountSharedRole != UserAccountRole.Owner).ToArray();
+			foreach (var sharedUser in sharedUsers)
+				accountShares.Add(
+					new UserAccountShareRole
+					{
+						UserId = sharedUser.ContactUserId,
+						Role = sharedUser.AccountSharedRole
+					});
+
+			IntuneService.AddAccountSharing(Account.Id, accountShares.ToArray());
+		}
 
         private void FillObject()
         {
