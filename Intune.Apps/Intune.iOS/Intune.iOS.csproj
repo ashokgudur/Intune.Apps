@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -132,7 +131,6 @@
     <Compile Include="AccountsTableViewCell.designer.cs">
       <DependentUpon>AccountsTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountsTableViewSource.cs" />
     <Compile Include="MainController.cs" />
     <Compile Include="MainController.designer.cs">
       <DependentUpon>MainController.cs</DependentUpon>
@@ -146,6 +144,7 @@
       <DependentUpon>AccountController.cs</DependentUpon>
     </Compile>
     <Compile Include="ActionSheetAlert.cs" />
+    <Compile Include="AccountsTableViewSource.cs" />
     <Compile Include="MessageAlert.cs" />
     <Compile Include="AccountEntriesController.cs" />
     <Compile Include="AccountEntriesController.designer.cs">
@@ -160,6 +159,11 @@
     <Compile Include="AccountEntryController.designer.cs">
       <DependentUpon>AccountEntryController.cs</DependentUpon>
     </Compile>
+    <Compile Include="AccountSharingTableViewCell.cs" />
+    <Compile Include="AccountSharingTableViewCell.designer.cs">
+      <DependentUpon>AccountSharingTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountSharingTableViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intune.Shared\Intune.Shared.csproj">

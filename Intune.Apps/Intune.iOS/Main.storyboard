@@ -123,7 +123,7 @@
                     <navigationItem id="136" key="navigationItem" title="Intune">
                         <barButtonItem key="rightBarButtonItem" style="done" id="230">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="12" translatesAutoresizingMaskIntoConstraints="NO" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="58" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16" weight="light"/>
                                 <state key="normal" title="Sign-up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,7 +136,7 @@
                         </barButtonItem>
                         <barButtonItem key="leftBarButtonItem" style="done" id="231">
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="34" translatesAutoresizingMaskIntoConstraints="NO" key="customView">
-                                <rect key="frame" x="0.0" y="0.0" width="122" height="32"/>
+                                <rect key="frame" x="0.0" y="0.0" width="121" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16" weight="light"/>
                                 <state key="normal" title="Forgot password">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -591,72 +591,6 @@
                                 <rect key="frame" x="0.0" y="125" width="375" height="485"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <subviews>
-                                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2005" fixedFrame="YES">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2009" rowHeight="56" reuseIdentifier="AccountsTableViewCellId" customClass="AccountsTableViewCell">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="56"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2009" id="2018">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2011" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                                            <rect key="frame" x="10" y="3" width="219" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2015" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                                            <rect key="frame" x="10" y="27" width="193" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" colorSpace="calibratedRGB" red="0.49803921568627452" green="0" blue="0.49803921568627452" alpha="1"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2013" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                                            <rect key="frame" x="237" y="3" width="129" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance is receivable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2017" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                                            <rect key="frame" x="211" y="27" width="155" height="21"/>
-                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
-                                                            <color key="textColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <variation key="default">
-                                                        <mask key="subviews">
-                                                            <exclude reference="2011"/>
-                                                            <exclude reference="2015"/>
-                                                            <exclude reference="2013"/>
-                                                            <exclude reference="2017"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
-                                                        <mask key="subviews">
-                                                            <include reference="2011"/>
-                                                            <include reference="2015"/>
-                                                            <include reference="2013"/>
-                                                            <include reference="2017"/>
-                                                        </mask>
-                                                    </variation>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="NameLabel" destination="2011" id="2010"/>
-                                                    <outlet property="BalanceLabel" destination="2013" id="2012"/>
-                                                    <outlet property="PermissionLabel" destination="2015" id="2014"/>
-                                                    <outlet property="BalanceTypeLabel" destination="2017" id="2016"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <connections>
-                                            <outlet property="dataSource" destination="2007" id="2006"/>
-                                            <outlet property="delegate" destination="2007" id="2008"/>
-                                        </connections>
-                                    </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1967" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -721,6 +655,72 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2005" fixedFrame="YES">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2009" rowHeight="50" reuseIdentifier="AccountsTableViewCellId" customClass="AccountsTableViewCell">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2009" id="2018">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2011" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                            <rect key="frame" x="10" y="0.0" width="219" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2015" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                            <rect key="frame" x="10" y="23" width="193" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" colorSpace="calibratedRGB" red="0.49803921568627452" green="0" blue="0.49803921568627452" alpha="1"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2013" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                            <rect key="frame" x="237" y="0.0" width="129" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance is receivable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2017" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                            <rect key="frame" x="211" y="23" width="155" height="21"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                                                            <color key="textColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <variation key="default">
+                                                        <mask key="subviews">
+                                                            <exclude reference="2011"/>
+                                                            <exclude reference="2015"/>
+                                                            <exclude reference="2013"/>
+                                                            <exclude reference="2017"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="subviews">
+                                                            <include reference="2011"/>
+                                                            <include reference="2015"/>
+                                                            <include reference="2013"/>
+                                                            <include reference="2017"/>
+                                                        </mask>
+                                                    </variation>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="NameLabel" destination="2011" id="2010"/>
+                                                    <outlet property="BalanceLabel" destination="2013" id="2012"/>
+                                                    <outlet property="PermissionLabel" destination="2015" id="2014"/>
+                                                    <outlet property="BalanceTypeLabel" destination="2017" id="2016"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="2007" id="2006"/>
+                                            <outlet property="delegate" destination="2007" id="2008"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -777,78 +777,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2062" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="New Contact">
-                                <rect key="frame" x="44" y="76" width="287" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" id="2063" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="28" y="163" width="323" height="284"/>
+                                <rect key="frame" x="16" y="143" width="343" height="242"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2064" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                        <rect key="frame" x="82" y="246" width="158" height="33"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                        <state key="normal" title="Save">
-                                            <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="SignInButton_TouchUpInside:" destination="2072" id="2071" eventType="touchUpInside"/>
-                                            <action selector="SignUpButton_TouchUpInside:" destination="2074" id="2073" eventType="touchUpInside"/>
-                                        </connections>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
-                                        </variation>
-                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2065" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="whileEditing" placeholder="Mobiile number" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="150" width="287" height="30"/>
+                                        <rect key="frame" x="0.0" y="150" width="343" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2066" translatesAutoresizingMaskIntoConstraints="NO" text="Mobile:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="125" width="101" height="21"/>
+                                        <rect key="frame" x="0.0" y="125" width="101" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="2067" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Contact full name" clearButtonMode="whileEditing" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="30" width="287" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="343" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="namePhonePad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2068" translatesAutoresizingMaskIntoConstraints="NO" text="Full name:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="5" width="101" height="21"/>
+                                        <rect key="frame" x="0.0" y="5" width="101" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2069" translatesAutoresizingMaskIntoConstraints="NO" text="Email:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="65" width="101" height="21"/>
+                                        <rect key="frame" x="0.0" y="65" width="101" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="2070" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Email address" clearButtonMode="whileEditing" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="90" width="287" height="30"/>
+                                        <rect key="frame" x="0.0" y="90" width="343" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="emailAddress"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2076" translatesAutoresizingMaskIntoConstraints="NO" text="Address:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="185" width="101" height="21"/>
+                                        <rect key="frame" x="0.0" y="185" width="101" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2077" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="whileEditing" placeholder="Address" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="210" width="287" height="30"/>
+                                        <rect key="frame" x="0.0" y="210" width="343" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                     </textField>
                                 </subviews>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="2064"/>
                                         <exclude reference="2065"/>
                                         <exclude reference="2066"/>
                                         <exclude reference="2067"/>
@@ -861,7 +840,6 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <mask key="subviews">
-                                        <include reference="2064"/>
                                         <include reference="2065"/>
                                         <include reference="2066"/>
                                         <include reference="2067"/>
@@ -874,41 +852,46 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="2075" translatesAutoresizingMaskIntoConstraints="NO" text="Message..." numberOfLines="3" adjustsFontSizeToFit="NO" fixedFrame="YES">
-                                <rect key="frame" x="46" y="125" width="287" height="30"/>
+                                <rect key="frame" x="46" y="108" width="287" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2084" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="266" y="35" width="93" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="SignInButton_TouchUpInside:" destination="2086" id="2085" eventType="touchUpInside"/>
-                                    <action selector="SignUpButton_TouchUpInside:" destination="2088" id="2087" eventType="touchUpInside"/>
-                                </connections>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES"/>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" id="2558" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="16" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="2559"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2560" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="60" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem id="2561" systemItem="save"/>
+                                    <barButtonItem id="2565" systemItem="flexibleSpace"/>
+                                    <barButtonItem id="2564" image="comment.png"/>
+                                    <barButtonItem id="2563" systemItem="flexibleSpace"/>
+                                    <barButtonItem id="2562" systemItem="cancel"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="2062"/>
                                 <exclude reference="2063"/>
                                 <exclude reference="2075"/>
-                                <exclude reference="2084"/>
+                                <exclude reference="2558"/>
+                                <exclude reference="2560"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="2062"/>
                                 <include reference="2063"/>
                                 <include reference="2075"/>
-                                <include reference="2084"/>
+                                <include reference="2558"/>
+                                <include reference="2560"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="SaveButton" destination="2064" id="name-outlet-2064"/>
                         <outlet property="FullNameLabel" destination="2068" id="name-outlet-2068"/>
                         <outlet property="FullNameTextField" destination="2067" id="name-outlet-2067"/>
                         <outlet property="EmailLabel" destination="2069" id="name-outlet-2069"/>
@@ -918,8 +901,10 @@
                         <outlet property="AddressLabel" destination="2076" id="name-outlet-2076"/>
                         <outlet property="AddressTextField" destination="2077" id="name-outlet-2077"/>
                         <outlet property="MessageLabel" destination="2075" id="name-outlet-2075"/>
-                        <outlet property="ContactTitle" destination="2062" id="name-outlet-2062"/>
-                        <outlet property="CancelButton" destination="2084" id="name-outlet-2084"/>
+                        <outlet property="NavigationBar" destination="2558" id="name-outlet-2558"/>
+                        <outlet property="SaveToolBarButton" destination="2561" id="name-outlet-2561"/>
+                        <outlet property="CancelToolBarButton" destination="2562" id="name-outlet-2562"/>
+                        <outlet property="ChatToolBarButton" destination="2564" id="name-outlet-2564"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2060" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -938,37 +923,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2112" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="New Account">
-                                <rect key="frame" x="44" y="76" width="287" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" id="2116" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="28" y="163" width="323" height="108"/>
+                                <rect key="frame" x="16" y="140" width="350" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2092" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                        <rect key="frame" x="82" y="68" width="158" height="33"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                        <state key="normal" title="Save">
-                                            <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="SignInButton_TouchUpInside:" destination="2118" id="2117" eventType="touchUpInside"/>
-                                            <action selector="SignUpButton_TouchUpInside:" destination="2120" id="2119" eventType="touchUpInside"/>
-                                        </connections>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
-                                        </variation>
-                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="2096" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Account name" clearButtonMode="whileEditing" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="30" width="287" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="350" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="namePhonePad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2094" translatesAutoresizingMaskIntoConstraints="NO" text="Account name:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="5" width="141" height="21"/>
+                                        <rect key="frame" x="0.0" y="5" width="128" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
@@ -976,60 +941,126 @@
                                 </subviews>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="2092"/>
                                         <exclude reference="2096"/>
                                         <exclude reference="2094"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <mask key="subviews">
-                                        <include reference="2092"/>
                                         <include reference="2096"/>
                                         <include reference="2094"/>
                                     </mask>
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="2110" translatesAutoresizingMaskIntoConstraints="NO" text="Message..." numberOfLines="3" adjustsFontSizeToFit="NO" fixedFrame="YES">
-                                <rect key="frame" x="46" y="125" width="287" height="30"/>
+                                <rect key="frame" x="16" y="107" width="350" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2114" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="266" y="35" width="93" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="SignInButton_TouchUpInside:" destination="2122" id="2121" eventType="touchUpInside"/>
-                                    <action selector="SignUpButton_TouchUpInside:" destination="2124" id="2123" eventType="touchUpInside"/>
-                                </connections>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES"/>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2537" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="235" width="375" height="416"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2538" rowHeight="50" reuseIdentifier="AccountSharingTableViewCellId" customClass="AccountSharingTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2538" id="2539">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2543" apportionsSegmentWidthsByContent="YES" fixedFrame="YES">
+                                                    <rect key="frame" x="140" y="10" width="230" height="29"/>
+                                                    <segments>
+                                                        <segment title="None"/>
+                                                        <segment title="Imp"/>
+                                                        <segment title="Collab"/>
+                                                        <segment title="View"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2547" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="2">
+                                                    <rect key="frame" x="8" y="2" width="129" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="2543"/>
+                                                    <exclude reference="2547"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="2543"/>
+                                                    <include reference="2547"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ContactNameLabel" destination="2547" id="name-outlet-2547"/>
+                                            <outlet property="PermissionSegement" destination="2543" id="name-outlet-2543"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" id="2549" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="16" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="2550"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2551" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="61" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem id="2552" systemItem="save"/>
+                                    <barButtonItem id="2567" systemItem="flexibleSpace"/>
+                                    <barButtonItem id="2566" image="comment.png"/>
+                                    <barButtonItem id="2554" systemItem="flexibleSpace"/>
+                                    <barButtonItem id="2553" systemItem="cancel"/>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2555" translatesAutoresizingMaskIntoConstraints="NO" text="SHARE ACCOUNT WITH CONTACTS" adjustsLetterSpacingToFitWidth="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="204" width="375" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.49803921568627452" blue="0" alpha="1"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="2112"/>
                                 <exclude reference="2116"/>
                                 <exclude reference="2110"/>
-                                <exclude reference="2114"/>
+                                <exclude reference="2537"/>
+                                <exclude reference="2549"/>
+                                <exclude reference="2551"/>
+                                <exclude reference="2555"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="2112"/>
                                 <include reference="2116"/>
                                 <include reference="2110"/>
-                                <include reference="2114"/>
+                                <include reference="2537"/>
+                                <include reference="2549"/>
+                                <include reference="2551"/>
+                                <include reference="2555"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="SaveButton" destination="2092" id="2091"/>
                         <outlet property="NameLabel" destination="2094" id="name-outlet-2094"/>
                         <outlet property="NameTextField" destination="2096" id="name-outlet-2096"/>
                         <outlet property="MessageLabel" destination="2110" id="2109"/>
-                        <outlet property="AccountTitle" destination="2112" id="name-outlet-2112"/>
-                        <outlet property="CancelButton" destination="2114" id="2113"/>
+                        <outlet property="NavigationBar" destination="2549" id="name-outlet-2549"/>
+                        <outlet property="SaveToolBarButton" destination="2552" id="name-outlet-2552"/>
+                        <outlet property="CancelToolBarButton" destination="2553" id="name-outlet-2553"/>
+                        <outlet property="AccountSharingTableView" destination="2537" id="name-outlet-2537"/>
+                        <outlet property="CommentToolBarButton" destination="2566" id="name-outlet-2566"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2127" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1086,39 +1117,39 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2188" reuseIdentifier="AccountEntriesTableViewCellId" customClass="AccountEntriesTableViewCell" rowHeight="55">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2188" reuseIdentifier="AccountEntriesTableViewCellId" customClass="AccountEntriesTableViewCell" rowHeight="50">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2188" id="2197">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/01/2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2190" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                                    <rect key="frame" x="10" y="3" width="105" height="23"/>
+                                                    <rect key="frame" x="10" y="0.0" width="105" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2194" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="0">
-                                                    <rect key="frame" x="10" y="27" width="356" height="23"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2194" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="2">
+                                                    <rect key="frame" x="10" y="21" width="356" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0.49803921568627452" green="0" blue="0.49803921568627452" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2192" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                                    <rect key="frame" x="237" y="3" width="129" height="23"/>
+                                                    <rect key="frame" x="237" y="0.0" width="129" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.50196078431372548" blue="0" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Received" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2196" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                                    <rect key="frame" x="123" y="3" width="77" height="23"/>
-                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                    <rect key="frame" x="123" y="0.0" width="77" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2204" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="1234">
-                                                    <rect key="frame" x="200" y="3" width="37" height="23"/>
+                                                    <rect key="frame" x="200" y="0.0" width="37" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                                     <nil key="highlightedColor"/>
@@ -1557,67 +1588,77 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="2352" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="26" y="159" width="323" height="286"/>
+                                <rect key="frame" x="15" y="159" width="350" height="191"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2354" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="whileEditing" placeholder="0.00" fixedFrame="YES" textAlignment="right">
-                                        <rect key="frame" x="18" y="190" width="287" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2354" translatesAutoresizingMaskIntoConstraints="NO" placeholder="0.00" fixedFrame="YES" textAlignment="right">
+                                        <rect key="frame" x="83" y="117" width="150" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="go" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2355" translatesAutoresizingMaskIntoConstraints="NO" text="Amount:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="165" width="101" height="21"/>
+                                        <rect key="frame" x="0.0" y="122" width="75" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="2356" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Date" clearButtonMode="whileEditing" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="70" width="287" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="2356" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Date" fixedFrame="YES">
+                                        <rect key="frame" x="83" y="41" width="179" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="namePhonePad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2357" translatesAutoresizingMaskIntoConstraints="NO" text="Date:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="45" width="67" height="21"/>
+                                        <rect key="frame" x="0.0" y="50" width="67" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2358" translatesAutoresizingMaskIntoConstraints="NO" text="Quantity:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="105" width="101" height="21"/>
+                                        <rect key="frame" x="0.0" y="84" width="76" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="2359" translatesAutoresizingMaskIntoConstraints="NO" placeholder="0" clearButtonMode="whileEditing" fixedFrame="YES" textAlignment="right">
-                                        <rect key="frame" x="18" y="130" width="287" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="2359" translatesAutoresizingMaskIntoConstraints="NO" placeholder="0" fixedFrame="YES" textAlignment="right">
+                                        <rect key="frame" x="83" y="79" width="107" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2360" translatesAutoresizingMaskIntoConstraints="NO" text="Notes:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="225" width="67" height="21"/>
+                                        <rect key="frame" x="0.0" y="160" width="67" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2361" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="whileEditing" placeholder="Notes" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="250" width="287" height="30"/>
+                                        <rect key="frame" x="83" y="155" width="260" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2362" translatesAutoresizingMaskIntoConstraints="NO" text="You:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="12" width="56" height="21"/>
+                                        <rect key="frame" x="0.0" y="12" width="56" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2363" fixedFrame="YES">
-                                        <rect key="frame" x="71" y="10" width="236" height="29"/>
+                                        <rect key="frame" x="83" y="8" width="236" height="29"/>
                                         <segments>
                                             <segment title="Paid"/>
                                             <segment title="Issued"/>
                                             <segment title="Received"/>
                                         </segments>
                                     </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2568" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="270" y="41" width="46" height="30"/>
+                                        <state key="normal" title="-&gt;">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <color key="backgroundColor" colorSpace="calibratedRGB" red="0.49803921568627452" green="0" blue="0.49803921568627452" alpha="1"/>
+                                        </variation>
+                                    </button>
                                 </subviews>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -1631,6 +1672,7 @@
                                         <exclude reference="2361"/>
                                         <exclude reference="2362"/>
                                         <exclude reference="2363"/>
+                                        <exclude reference="2568"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
@@ -1645,6 +1687,7 @@
                                         <include reference="2361"/>
                                         <include reference="2362"/>
                                         <include reference="2363"/>
+                                        <include reference="2568"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1701,6 +1744,7 @@
                         <outlet property="CommentToolBarButton" destination="2392" id="name-outlet-2392"/>
                         <outlet property="CancelToolBarButton" destination="2389" id="name-outlet-2389"/>
                         <outlet property="SaveToolBarButton" destination="2393" id="name-outlet-2393"/>
+                        <outlet property="TxnDateButton" destination="2568" id="name-outlet-2568"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2342" userLabel="First Responder" sceneMemberID="firstResponder"/>

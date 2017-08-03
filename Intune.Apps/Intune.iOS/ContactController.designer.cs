@@ -24,19 +24,11 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel AmountLabel { get; set; }
+        UIKit.UIBarButtonItem CancelToolBarButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField AmountTextField { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton CancelButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel ContactTitle { get; set; }
+        UIKit.UIBarButtonItem ChatToolBarButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -45,10 +37,6 @@ namespace Intune.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField EmailTextField { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel EntryTitle { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -72,39 +60,11 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel NotesLabel { get; set; }
+        UIKit.UINavigationBar NavigationBar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField NotesTextField { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel QuantityLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField QuantityTextField { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton SaveButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel TxnDateLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField TxnDateTextField { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel TxnTypeLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISegmentedControl TxnTypeSegement { get; set; }
+        UIKit.UIBarButtonItem SaveToolBarButton { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -118,24 +78,14 @@ namespace Intune.iOS
                 AddressTextField = null;
             }
 
-            if (AmountLabel != null) {
-                AmountLabel.Dispose ();
-                AmountLabel = null;
+            if (CancelToolBarButton != null) {
+                CancelToolBarButton.Dispose ();
+                CancelToolBarButton = null;
             }
 
-            if (AmountTextField != null) {
-                AmountTextField.Dispose ();
-                AmountTextField = null;
-            }
-
-            if (CancelButton != null) {
-                CancelButton.Dispose ();
-                CancelButton = null;
-            }
-
-            if (ContactTitle != null) {
-                ContactTitle.Dispose ();
-                ContactTitle = null;
+            if (ChatToolBarButton != null) {
+                ChatToolBarButton.Dispose ();
+                ChatToolBarButton = null;
             }
 
             if (EmailLabel != null) {
@@ -146,11 +96,6 @@ namespace Intune.iOS
             if (EmailTextField != null) {
                 EmailTextField.Dispose ();
                 EmailTextField = null;
-            }
-
-            if (EntryTitle != null) {
-                EntryTitle.Dispose ();
-                EntryTitle = null;
             }
 
             if (FullNameLabel != null) {
@@ -178,49 +123,14 @@ namespace Intune.iOS
                 MobileTextField = null;
             }
 
-            if (NotesLabel != null) {
-                NotesLabel.Dispose ();
-                NotesLabel = null;
+            if (NavigationBar != null) {
+                NavigationBar.Dispose ();
+                NavigationBar = null;
             }
 
-            if (NotesTextField != null) {
-                NotesTextField.Dispose ();
-                NotesTextField = null;
-            }
-
-            if (QuantityLabel != null) {
-                QuantityLabel.Dispose ();
-                QuantityLabel = null;
-            }
-
-            if (QuantityTextField != null) {
-                QuantityTextField.Dispose ();
-                QuantityTextField = null;
-            }
-
-            if (SaveButton != null) {
-                SaveButton.Dispose ();
-                SaveButton = null;
-            }
-
-            if (TxnDateLabel != null) {
-                TxnDateLabel.Dispose ();
-                TxnDateLabel = null;
-            }
-
-            if (TxnDateTextField != null) {
-                TxnDateTextField.Dispose ();
-                TxnDateTextField = null;
-            }
-
-            if (TxnTypeLabel != null) {
-                TxnTypeLabel.Dispose ();
-                TxnTypeLabel = null;
-            }
-
-            if (TxnTypeSegement != null) {
-                TxnTypeSegement.Dispose ();
-                TxnTypeSegement = null;
+            if (SaveToolBarButton != null) {
+                SaveToolBarButton.Dispose ();
+                SaveToolBarButton = null;
             }
         }
     }

@@ -32,13 +32,6 @@ namespace Intune.iOS
             SetAccountEntriesTableViewSource();
         }
 
-        private void SetupAccountEntriesTableView()
-        {
-            //AccountEntriesTableView.RowHeight = UITableView.AutomaticDimension;
-            //AccountEntriesTableView.EstimatedRowHeight = 50f;
-            //AccountEntriesTableView.ReloadData();
-		}
-
         void AddRefreshControls()
         {
             if (!UIDevice.CurrentDevice.CheckSystemVersion(6, 0))
@@ -68,7 +61,6 @@ namespace Intune.iOS
 		{
 			var entries = IntuneService.GetAccountEntries(Account.Id);
 			AccountEntriesTableView.Source = new AccountEntriesTableViewSource(this, entries);
-			SetupAccountEntriesTableView();
 			DisplayAccountSummary();
 		}
 

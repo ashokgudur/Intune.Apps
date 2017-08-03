@@ -20,24 +20,45 @@ namespace Intune.iOS
             MessageLabel.Text = "";
             SetViewTitle();
             NameTextField.Text = Account.Name;
-            SaveButton.TouchUpInside += SaveButton_TouchUpInside;
-            CancelButton.TouchUpInside += CancelButton_TouchUpInside;
+            SetAccountSharingTableViewSource();
+            SaveToolBarButton.Clicked += SaveToolBarButton_Clicked;
+            CommentToolBarButton.Clicked += CommentToolBarButton_Clicked; ;
+            CancelToolBarButton.Clicked += CancelToolBarButton_Clicked;
+        }
+
+        public void SetAccountSharingTableViewSource()
+        {
+            var contacts = IntuneService.GetAccountSharedContacts(SignInUser.Id, Account.Id);
+            AccountSharingTableView.Source = new AccountSharingTableViewSource(this, contacts);
         }
 
         private void SetViewTitle()
         {
             if (Account.IsNew)
-                AccountTitle.Text = "New Account";
+                NavigationBar.TopItem.Title = "New Account";
             else
-                AccountTitle.Text = Account.Name;
+                NavigationBar.TopItem.Title = Account.Name;
         }
 
-        void CancelButton_TouchUpInside(object sender, EventArgs e)
+        void CommentToolBarButton_Clicked(object sender, EventArgs e)
+        {
+            //TODO: ...
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                MessageLabel.Text = ex.Message;
+            }
+        }
+
+        void CancelToolBarButton_Clicked(object sender, EventArgs e)
         {
             DismissViewController(true, null);
         }
 
-        void SaveButton_TouchUpInside(object sender, EventArgs e)
+        void SaveToolBarButton_Clicked(object sender, EventArgs e)
         {
             try
             {
@@ -48,7 +69,7 @@ namespace Intune.iOS
                 else
                     IntuneService.UpdateAccount(Account);
 
-				DismissViewController(false, null);
+                DismissViewController(false, null);
             }
             catch (Exception ex)
             {

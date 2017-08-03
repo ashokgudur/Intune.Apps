@@ -20,8 +20,9 @@ namespace Intune.iOS
             MessageLabel.Text = "";
             SetViewTitle();
             FillControls();
-            SaveButton.TouchUpInside += SaveButton_TouchUpInside;
-            CancelButton.TouchUpInside += CancelButton_TouchUpInside;
+            SaveToolBarButton.Clicked += SaveToolBarButton_Clicked;
+            ChatToolBarButton.Clicked += ChatToolBarButton_Clicked;
+            CancelToolBarButton.Clicked += CancelToolBarButton_Clicked;
         }
 
         private void FillControls()
@@ -35,17 +36,30 @@ namespace Intune.iOS
         private void SetViewTitle()
         {
             if (Contact.IsNew)
-                ContactTitle.Text = "New Contact";
+                NavigationBar.TopItem.Title = "New Contact";
             else
-                ContactTitle.Text = Contact.Name;
+                NavigationBar.TopItem.Title = Contact.Name;
         }
 
-        void CancelButton_TouchUpInside(object sender, EventArgs e)
+        void ChatToolBarButton_Clicked(object sender, EventArgs e)
+        {
+            //TODO: ...
+            try
+            {
+                throw new NotImplementedException();
+            }
+			catch (Exception ex)
+			{
+				MessageLabel.Text = ex.Message;
+			}
+		}
+
+        void CancelToolBarButton_Clicked(object sender, EventArgs e)
         {
             DismissViewController(true, null);
         }
 
-        void SaveButton_TouchUpInside(object sender, EventArgs e)
+        void SaveToolBarButton_Clicked(object sender, EventArgs e)
         {
             try
             {

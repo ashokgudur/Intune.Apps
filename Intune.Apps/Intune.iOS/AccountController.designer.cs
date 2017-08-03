@@ -16,11 +16,15 @@ namespace Intune.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel AccountTitle { get; set; }
+        UIKit.UITableView AccountSharingTableView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton CancelButton { get; set; }
+        UIKit.UIBarButtonItem CancelToolBarButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem CommentToolBarButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -36,18 +40,27 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton SaveButton { get; set; }
+        UIKit.UINavigationBar NavigationBar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem SaveToolBarButton { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (AccountTitle != null) {
-                AccountTitle.Dispose ();
-                AccountTitle = null;
+            if (AccountSharingTableView != null) {
+                AccountSharingTableView.Dispose ();
+                AccountSharingTableView = null;
             }
 
-            if (CancelButton != null) {
-                CancelButton.Dispose ();
-                CancelButton = null;
+            if (CancelToolBarButton != null) {
+                CancelToolBarButton.Dispose ();
+                CancelToolBarButton = null;
+            }
+
+            if (CommentToolBarButton != null) {
+                CommentToolBarButton.Dispose ();
+                CommentToolBarButton = null;
             }
 
             if (MessageLabel != null) {
@@ -65,9 +78,14 @@ namespace Intune.iOS
                 NameTextField = null;
             }
 
-            if (SaveButton != null) {
-                SaveButton.Dispose ();
-                SaveButton = null;
+            if (NavigationBar != null) {
+                NavigationBar.Dispose ();
+                NavigationBar = null;
+            }
+
+            if (SaveToolBarButton != null) {
+                SaveToolBarButton.Dispose ();
+                SaveToolBarButton = null;
             }
         }
     }
