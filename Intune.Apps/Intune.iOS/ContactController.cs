@@ -10,7 +10,7 @@ namespace Intune.iOS
         public User SignInUser { get; set; }
         public Contact Contact { get; set; }
 
-		public ContactController(IntPtr handle) : base(handle)
+        public ContactController(IntPtr handle) : base(handle)
         {
         }
 
@@ -55,7 +55,7 @@ namespace Intune.iOS
                     IntuneService.AddContact(Contact);
                 else
                     IntuneService.UpdateContact(Contact);
-                
+
                 DismissViewController(false, null);
             }
             catch (Exception ex)
@@ -74,27 +74,27 @@ namespace Intune.iOS
             Contact.UserId = SignInUser.Id;
         }
 
-    private void ValidateUserInput()
-    {
-        if (string.IsNullOrWhiteSpace(FullNameTextField.Text.Trim()))
+        private void ValidateUserInput()
         {
-            throw new ArgumentException("Enter full name");
-        }
+            if (string.IsNullOrWhiteSpace(FullNameTextField.Text.Trim()))
+            {
+                throw new ArgumentException("Enter full name");
+            }
 
-        if (string.IsNullOrWhiteSpace(EmailTextField.Text.Trim()))
-        {
-            throw new ArgumentException("Enter email address");
-        }
+            if (string.IsNullOrWhiteSpace(EmailTextField.Text.Trim()))
+            {
+                throw new ArgumentException("Enter email address");
+            }
 
-        if (string.IsNullOrWhiteSpace(MobileTextField.Text.Trim()))
-        {
-            throw new ArgumentException("Enter mobile number");
-        }
+            if (string.IsNullOrWhiteSpace(MobileTextField.Text.Trim()))
+            {
+                throw new ArgumentException("Enter mobile number");
+            }
 
-        if (string.IsNullOrWhiteSpace(AddressTextField.Text.Trim()))
-        {
-            throw new ArgumentException("Enter address");
+            if (string.IsNullOrWhiteSpace(AddressTextField.Text.Trim()))
+            {
+                throw new ArgumentException("Enter address");
+            }
         }
     }
-}
 }

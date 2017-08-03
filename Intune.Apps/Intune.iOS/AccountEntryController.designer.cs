@@ -11,17 +11,9 @@ using UIKit;
 
 namespace Intune.iOS
 {
-    [Register ("ContactController")]
-    partial class ContactController
+    [Register ("AccountEntryController")]
+    partial class AccountEntryController
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel AddressLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField AddressTextField { get; set; }
-
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel AmountLabel { get; set; }
@@ -32,31 +24,11 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton CancelButton { get; set; }
+        UIKit.UIBarButtonItem CancelToolBarButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel ContactTitle { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel EmailLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField EmailTextField { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel EntryTitle { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel FullNameLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField FullNameTextField { get; set; }
+        UIKit.UIBarButtonItem CommentToolBarButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -64,11 +36,7 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel MobileLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField MobileTextField { get; set; }
+        UIKit.UINavigationBar NavigationBar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -88,7 +56,7 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton SaveButton { get; set; }
+        UIKit.UIBarButtonItem SaveToolBarButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -106,18 +74,12 @@ namespace Intune.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISegmentedControl TxnTypeSegement { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem VoidToolBarButton { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
-            if (AddressLabel != null) {
-                AddressLabel.Dispose ();
-                AddressLabel = null;
-            }
-
-            if (AddressTextField != null) {
-                AddressTextField.Dispose ();
-                AddressTextField = null;
-            }
-
             if (AmountLabel != null) {
                 AmountLabel.Dispose ();
                 AmountLabel = null;
@@ -128,39 +90,14 @@ namespace Intune.iOS
                 AmountTextField = null;
             }
 
-            if (CancelButton != null) {
-                CancelButton.Dispose ();
-                CancelButton = null;
+            if (CancelToolBarButton != null) {
+                CancelToolBarButton.Dispose ();
+                CancelToolBarButton = null;
             }
 
-            if (ContactTitle != null) {
-                ContactTitle.Dispose ();
-                ContactTitle = null;
-            }
-
-            if (EmailLabel != null) {
-                EmailLabel.Dispose ();
-                EmailLabel = null;
-            }
-
-            if (EmailTextField != null) {
-                EmailTextField.Dispose ();
-                EmailTextField = null;
-            }
-
-            if (EntryTitle != null) {
-                EntryTitle.Dispose ();
-                EntryTitle = null;
-            }
-
-            if (FullNameLabel != null) {
-                FullNameLabel.Dispose ();
-                FullNameLabel = null;
-            }
-
-            if (FullNameTextField != null) {
-                FullNameTextField.Dispose ();
-                FullNameTextField = null;
+            if (CommentToolBarButton != null) {
+                CommentToolBarButton.Dispose ();
+                CommentToolBarButton = null;
             }
 
             if (MessageLabel != null) {
@@ -168,14 +105,9 @@ namespace Intune.iOS
                 MessageLabel = null;
             }
 
-            if (MobileLabel != null) {
-                MobileLabel.Dispose ();
-                MobileLabel = null;
-            }
-
-            if (MobileTextField != null) {
-                MobileTextField.Dispose ();
-                MobileTextField = null;
+            if (NavigationBar != null) {
+                NavigationBar.Dispose ();
+                NavigationBar = null;
             }
 
             if (NotesLabel != null) {
@@ -198,9 +130,9 @@ namespace Intune.iOS
                 QuantityTextField = null;
             }
 
-            if (SaveButton != null) {
-                SaveButton.Dispose ();
-                SaveButton = null;
+            if (SaveToolBarButton != null) {
+                SaveToolBarButton.Dispose ();
+                SaveToolBarButton = null;
             }
 
             if (TxnDateLabel != null) {
@@ -221,6 +153,11 @@ namespace Intune.iOS
             if (TxnTypeSegement != null) {
                 TxnTypeSegement.Dispose ();
                 TxnTypeSegement = null;
+            }
+
+            if (VoidToolBarButton != null) {
+                VoidToolBarButton.Dispose ();
+                VoidToolBarButton = null;
             }
         }
     }

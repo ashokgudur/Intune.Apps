@@ -2,6 +2,7 @@ using Foundation;
 using System;
 using UIKit;
 using Intune.Shared.Model;
+using System.Globalization;
 
 namespace Intune.iOS
 {
@@ -71,6 +72,7 @@ namespace Intune.iOS
         {
             try
             {
+                //TODO: ...
                 throw new NotImplementedException();
             }
             catch (Exception ex)
@@ -103,15 +105,76 @@ namespace Intune.iOS
             }
         }
 
+        public void VoidAccountEntry(Entry entry)
+        {
+            try
+            {
+                VoidEntry(entry);
+				SetAccountEntriesTableViewSource();
+			}
+            catch (Exception ex)
+            {
+                MessageAlert.Instance(this).Show(ex.Message);
+            }
+        }
+
+        private void VoidEntry(Entry entry)
+        {
+            var voidEntry = new Entry
+            {
+                UserId = SignInUser.Id,
+                AccountId = entry.AccountId,
+                Notes = ComposeVoidNotes(entry),
+                TxnType = MakeVoidTxnType(entry),
+                TxnDate = DateTime.Today,
+                Quantity = entry.Quantity,
+                Amount = entry.Amount,
+                VoidId = entry.Id,
+            };
+
+            IntuneService.AddAccountEntry(voidEntry);
+        }
+
+        private TxnType MakeVoidTxnType(Entry entry)
+        {
+            if (entry.TxnType == TxnType.Paid || entry.TxnType == TxnType.Issued)
+                return TxnType.Received;
+            else if (entry.Amount > 0)
+                return TxnType.Paid;
+            else
+                return TxnType.Issued;
+        }
+
+        private string ComposeVoidNotes(Entry entry)
+        {
+            return string.Format("Void of {0} on {1} of Qty: {2} and {3}",
+                entry.Notes, entry.TxnDate.ToShortDateString(), entry.Quantity,
+                entry.Amount.ToString("C2", CultureInfo.CurrentCulture));
+        }
+
+        public void CommentOnAccountEntry(Entry entry)
+        {
+            //TODO: ...
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                MessageAlert.Instance(this).Show(ex.Message);
+            }
+        }
+
         public void DisplayAccountEntryController(Entry entry)
         {
-            //         var controller = Storyboard.InstantiateViewController("AccountEntryController") as AccountEntryController;
-            //if (controller == null)
-            //	throw new Exception("Could not find 'AccountEntryController'");
+            var controller = Storyboard.InstantiateViewController("AccountEntryController") as AccountEntryController;
+            if (controller == null)
+                throw new Exception("Could not find 'AccountEntryController'");
 
-            //controller.SignInUser = SignInUser;
-            //controller.Contact = contact;
-            //PresentViewController(controller, true, null);
+            controller.SignInUser = SignInUser;
+            controller.Account = Account;
+            controller.Entry = entry;
+            PresentViewController(controller, true, null);
         }
     }
 }

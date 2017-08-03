@@ -23,10 +23,14 @@ namespace Intune.iOS
         {
             switch (action)
             {
-                case AccountEntryRowActionOptions.Void:
+                case AccountEntryRowActionOptions.View:
                     parentController.DisplayAccountEntryController(entry);
                     break;
+                case AccountEntryRowActionOptions.Void:
+                    parentController.VoidAccountEntry(entry);
+                    break;
                 case AccountEntryRowActionOptions.Comment:
+                    parentController.CommentOnAccountEntry(entry);
                     break;
                 default:
                     throw new Exception($"Invalid option '{action}'");
@@ -36,8 +40,9 @@ namespace Intune.iOS
 
     public class AccountEntryRowActionOptions
     {
-		public const string Void = "Void";
-		public const string Comment = "Comment";
+        public const string View = "View";
+        public const string Void = "Void";
+        public const string Comment = "Comment";
     }
 
     public class AccountEntriesTableViewSource : UITableViewSource
@@ -62,11 +67,15 @@ namespace Intune.iOS
         {
             var actionExecutor = new AccountEntryActionSheetActionExecutor(parentController, entry);
             var alert = ActionSheetAlert.Instance(actionExecutor);
-            var options = new string[]
-            {
-                AccountEntryRowActionOptions.Void,
-                AccountEntryRowActionOptions.Comment,
-            };
+            var options = new string[] { AccountEntryRowActionOptions.Comment };
+
+            if (!entry.IsVoid)
+                options = new string[]
+                {
+                    AccountEntryRowActionOptions.View,
+                    AccountEntryRowActionOptions.Void,
+                    AccountEntryRowActionOptions.Comment,
+                };
 
             alert.Show("What to do you want to do?", options, entry.Notes);
         }

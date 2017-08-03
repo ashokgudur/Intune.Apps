@@ -27,7 +27,7 @@
     <MtouchLink>None</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    <CodesignProvision>iOS Team Provisioning Profile: com.intunetech.intune-ios</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: com.intune.intune-ios</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -156,6 +156,10 @@
       <DependentUpon>AccountEntriesTableViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountEntriesTableViewSource.cs" />
+    <Compile Include="AccountEntryController.cs" />
+    <Compile Include="AccountEntryController.designer.cs">
+      <DependentUpon>AccountEntryController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intune.Shared\Intune.Shared.csproj">
