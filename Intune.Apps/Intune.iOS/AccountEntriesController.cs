@@ -23,13 +23,7 @@ namespace Intune.iOS
             SetAccountEntriesTableViewSource();
         }
 
-        public void SetAccountEntriesTableViewSource()
-        {
-            var entries = IntuneService.GetAccountEntries(Account.Id);
-            AccountEntriesTableView.Source = new AccountEntriesTableViewSource(this, entries);
-        }
-
-        public override void ViewDidLoad()
+		public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             NavigationBar.TopItem.Title = Account.Name;
@@ -37,6 +31,13 @@ namespace Intune.iOS
             HookEventHandlers();
             SetAccountEntriesTableViewSource();
         }
+
+        private void SetupAccountEntriesTableView()
+        {
+            //AccountEntriesTableView.RowHeight = UITableView.AutomaticDimension;
+            //AccountEntriesTableView.EstimatedRowHeight = 50f;
+            //AccountEntriesTableView.ReloadData();
+		}
 
         void AddRefreshControls()
         {
@@ -63,7 +64,57 @@ namespace Intune.iOS
             CommentToolBarButton.Clicked += CommentToolBarButton_Clicked;
         }
 
-        void CloseToolBarButton_Clicked(object sender, EventArgs e)
+		public void SetAccountEntriesTableViewSource()
+		{
+			var entries = IntuneService.GetAccountEntries(Account.Id);
+			AccountEntriesTableView.Source = new AccountEntriesTableViewSource(this, entries);
+			SetupAccountEntriesTableView();
+			DisplayAccountSummary();
+		}
+
+		private void DisplayAccountSummary()
+		{
+			var accountsAdapter = AccountEntriesTableView.Source as AccountEntriesTableViewSource;
+
+			TotalPaidLabel.Text = $"TOTAL {getTotalsTxnType("Paid")}";
+			TotalPaidQuantityLabel.Text = accountsAdapter.TotalCreditQuantity.ToString("#0");
+			TotalPaidAmountLabel.Text = Math.Abs(accountsAdapter.TotalCreditAmount).ToString("C2", CultureInfo.CurrentCulture);
+
+			TotalReceivedLabel.Text = $"TOTAL {getTotalsTxnType("Rcvd")}";
+			TotalReceivedQuantityLabel.Text = accountsAdapter.TotalDebitQuantity.ToString("#0");
+			TotalReceivedAmountLabel.Text = Math.Abs(accountsAdapter.TotalDebitAmount).ToString("C2", CultureInfo.CurrentCulture);
+
+			TotalBalanceLabel.Text = $"TOTAL {GetBalanceTitle(accountsAdapter.BalanceAmount)}";
+			TotalBalanceQuantityLabel.Text = accountsAdapter.BalanceQuantity.ToString("#0");
+			TotalBalanceAmountLabel.Text = Math.Abs(accountsAdapter.BalanceAmount).ToString("C2", CultureInfo.CurrentCulture);
+		}
+
+		private String GetBalanceTitle(decimal balanceAmount)
+		{
+			return balanceAmount == 0
+				? "Zero"
+				: balanceAmount > 0
+					? getBalanceTitle("Rcvbl")
+					: getBalanceTitle("Paybl");
+		}
+
+		private string getTotalsTxnType(string ofType)
+		{
+			if (Account.Role == UserAccountRole.Collaborator)
+				return ofType == "Paid" ? "RECEIVED" : "PAID";
+			else
+				return ofType == "Paid" ? "PAID" : "RECEIVED";
+		}
+
+		private string getBalanceTitle(string ofType)
+		{
+			if (Account.Role == UserAccountRole.Collaborator)
+				return ofType == "Rcvbl" ? "PAYABLE" : "RECEIVABLE";
+			else
+				return ofType == "Rcvbl" ? "RECEIVABLE" : "PAYABLE";
+		}
+
+		void CloseToolBarButton_Clicked(object sender, EventArgs e)
         {
             DismissViewController(true, null);
         }

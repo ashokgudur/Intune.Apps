@@ -38,6 +38,42 @@ namespace Intune.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIBarButtonItem RefreshToolBarButton { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TotalBalanceAmountLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TotalBalanceLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TotalBalanceQuantityLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TotalPaidAmountLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TotalPaidLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TotalPaidQuantityLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TotalReceivedAmountLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TotalReceivedLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TotalReceivedQuantityLabel { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (AccountEntriesTableView != null) {
@@ -68,6 +104,51 @@ namespace Intune.iOS
             if (RefreshToolBarButton != null) {
                 RefreshToolBarButton.Dispose ();
                 RefreshToolBarButton = null;
+            }
+
+            if (TotalBalanceAmountLabel != null) {
+                TotalBalanceAmountLabel.Dispose ();
+                TotalBalanceAmountLabel = null;
+            }
+
+            if (TotalBalanceLabel != null) {
+                TotalBalanceLabel.Dispose ();
+                TotalBalanceLabel = null;
+            }
+
+            if (TotalBalanceQuantityLabel != null) {
+                TotalBalanceQuantityLabel.Dispose ();
+                TotalBalanceQuantityLabel = null;
+            }
+
+            if (TotalPaidAmountLabel != null) {
+                TotalPaidAmountLabel.Dispose ();
+                TotalPaidAmountLabel = null;
+            }
+
+            if (TotalPaidLabel != null) {
+                TotalPaidLabel.Dispose ();
+                TotalPaidLabel = null;
+            }
+
+            if (TotalPaidQuantityLabel != null) {
+                TotalPaidQuantityLabel.Dispose ();
+                TotalPaidQuantityLabel = null;
+            }
+
+            if (TotalReceivedAmountLabel != null) {
+                TotalReceivedAmountLabel.Dispose ();
+                TotalReceivedAmountLabel = null;
+            }
+
+            if (TotalReceivedLabel != null) {
+                TotalReceivedLabel.Dispose ();
+                TotalReceivedLabel = null;
+            }
+
+            if (TotalReceivedQuantityLabel != null) {
+                TotalReceivedQuantityLabel.Dispose ();
+                TotalReceivedQuantityLabel = null;
             }
         }
     }

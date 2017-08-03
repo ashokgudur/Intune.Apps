@@ -1048,7 +1048,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2172" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2172" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="73" width="375" height="44"/>
                                 <items>
                                     <barButtonItem id="2166" systemItem="add">
@@ -1062,6 +1062,19 @@
                                         <connections/>
                                     </barButtonItem>
                                 </items>
+                                <constraints>
+                                    <constraint id="2470" firstAttribute="width" constant="375"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2470"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="2470"/>
+                                    </mask>
+                                </variation>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" id="2170" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="0.0" y="31" width="375" height="44"/>
@@ -1070,7 +1083,7 @@
                                 </items>
                             </navigationBar>
                             <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2164" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="119" width="375" height="548"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2188" reuseIdentifier="AccountEntriesTableViewCellId" customClass="AccountEntriesTableViewCell" rowHeight="55">
@@ -1144,17 +1157,364 @@
                                     <outlet property="delegate" destination="2186" id="2187"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" id="2417" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="522" width="375" height="136"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2409" translatesAutoresizingMaskIntoConstraints="NO" text="SUMMARY" adjustsLetterSpacingToFitWidth="NO">
+                                        <rect key="frame" x="0.0" y="4" width="375" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.49803921568627452" blue="0" alpha="1"/>
+                                            <mask key="constraints">
+                                                <include reference="2428"/>
+                                                <include reference="2429"/>
+                                            </mask>
+                                        </variation>
+                                        <constraints>
+                                            <constraint id="2428" firstAttribute="width" constant="375"/>
+                                            <constraint id="2429" firstAttribute="height" constant="37"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2428"/>
+                                                <exclude reference="2429"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2410" translatesAutoresizingMaskIntoConstraints="NO" text="TOTAL PAID:">
+                                        <rect key="frame" x="5" y="45" width="125" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2432" firstAttribute="width" constant="125"/>
+                                            <constraint id="2433" firstAttribute="height" constant="25"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2432"/>
+                                                <exclude reference="2433"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="2432"/>
+                                                <include reference="2433"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2411" translatesAutoresizingMaskIntoConstraints="NO" text="99999">
+                                        <rect key="frame" x="160" y="45" width="65" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2436" firstAttribute="width" constant="65"/>
+                                            <constraint id="2437" firstAttribute="height" constant="25"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2436"/>
+                                                <exclude reference="2437"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="2436"/>
+                                                <include reference="2437"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2418" translatesAutoresizingMaskIntoConstraints="NO" text="99999">
+                                        <rect key="frame" x="160" y="75" width="65" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.50196078431372548" blue="0.25098039215686274" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2440" firstAttribute="width" constant="65"/>
+                                            <constraint id="2441" firstAttribute="height" constant="25"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2440"/>
+                                                <exclude reference="2441"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="2440"/>
+                                                <include reference="2441"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2415" translatesAutoresizingMaskIntoConstraints="NO" text="TOTAL RECEIVED:">
+                                        <rect key="frame" x="5" y="75" width="155" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.50196078431372548" blue="0.25098039215686274" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2444" firstAttribute="width" constant="155"/>
+                                            <constraint id="2445" firstAttribute="height" constant="25"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2444"/>
+                                                <exclude reference="2445"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="2444"/>
+                                                <include reference="2445"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2416" translatesAutoresizingMaskIntoConstraints="NO" text="TOTAL BALANCE:">
+                                        <rect key="frame" x="5" y="105" width="155" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2448" firstAttribute="width" constant="155"/>
+                                            <constraint id="2449" firstAttribute="height" constant="25"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2448"/>
+                                                <exclude reference="2449"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="2448"/>
+                                                <include reference="2449"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2412" translatesAutoresizingMaskIntoConstraints="NO" text="9999999.99">
+                                        <rect key="frame" x="228" y="45" width="147" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="1" green="0.49803921568627452" blue="0" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2452" firstAttribute="width" constant="147"/>
+                                            <constraint id="2453" firstAttribute="height" constant="25"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2452"/>
+                                                <exclude reference="2453"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="2452"/>
+                                                <include reference="2453"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2413" translatesAutoresizingMaskIntoConstraints="NO" text="9999999.99">
+                                        <rect key="frame" x="228" y="75" width="147" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.50196078431372548" blue="0.25098039215686274" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2456" firstAttribute="width" constant="147"/>
+                                            <constraint id="2457" firstAttribute="height" constant="25"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2456"/>
+                                                <exclude reference="2457"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="2456"/>
+                                                <include reference="2457"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2419" translatesAutoresizingMaskIntoConstraints="NO" text="99999">
+                                        <rect key="frame" x="160" y="105" width="65" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2460" firstAttribute="width" constant="65"/>
+                                            <constraint id="2461" firstAttribute="height" constant="25"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2460"/>
+                                                <exclude reference="2461"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="2460"/>
+                                                <include reference="2461"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2420" translatesAutoresizingMaskIntoConstraints="NO" text="9999999.99">
+                                        <rect key="frame" x="228" y="105" width="147" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2464" firstAttribute="width" constant="147"/>
+                                            <constraint id="2465" firstAttribute="height" constant="25"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2464"/>
+                                                <exclude reference="2465"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="2464"/>
+                                                <include reference="2465"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="2409"/>
+                                        <exclude reference="2410"/>
+                                        <exclude reference="2411"/>
+                                        <exclude reference="2418"/>
+                                        <exclude reference="2415"/>
+                                        <exclude reference="2416"/>
+                                        <exclude reference="2412"/>
+                                        <exclude reference="2413"/>
+                                        <exclude reference="2419"/>
+                                        <exclude reference="2420"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="2424"/>
+                                        <exclude reference="2425"/>
+                                        <exclude reference="2426"/>
+                                        <exclude reference="2427"/>
+                                        <exclude reference="2430"/>
+                                        <exclude reference="2431"/>
+                                        <exclude reference="2434"/>
+                                        <exclude reference="2435"/>
+                                        <exclude reference="2438"/>
+                                        <exclude reference="2439"/>
+                                        <exclude reference="2442"/>
+                                        <exclude reference="2443"/>
+                                        <exclude reference="2446"/>
+                                        <exclude reference="2447"/>
+                                        <exclude reference="2450"/>
+                                        <exclude reference="2451"/>
+                                        <exclude reference="2454"/>
+                                        <exclude reference="2455"/>
+                                        <exclude reference="2458"/>
+                                        <exclude reference="2459"/>
+                                        <exclude reference="2462"/>
+                                        <exclude reference="2463"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="2409"/>
+                                        <include reference="2410"/>
+                                        <include reference="2411"/>
+                                        <include reference="2418"/>
+                                        <include reference="2415"/>
+                                        <include reference="2416"/>
+                                        <include reference="2412"/>
+                                        <include reference="2413"/>
+                                        <include reference="2419"/>
+                                        <include reference="2420"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="2424"/>
+                                        <include reference="2425"/>
+                                        <include reference="2426"/>
+                                        <include reference="2427"/>
+                                        <include reference="2430"/>
+                                        <include reference="2431"/>
+                                        <include reference="2434"/>
+                                        <include reference="2435"/>
+                                        <include reference="2438"/>
+                                        <include reference="2439"/>
+                                        <include reference="2442"/>
+                                        <include reference="2443"/>
+                                        <include reference="2446"/>
+                                        <include reference="2447"/>
+                                        <include reference="2450"/>
+                                        <include reference="2451"/>
+                                        <include reference="2454"/>
+                                        <include reference="2455"/>
+                                        <include reference="2458"/>
+                                        <include reference="2459"/>
+                                        <include reference="2462"/>
+                                        <include reference="2463"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="2424" firstAttribute="width" constant="375"/>
+                                    <constraint id="2425" firstAttribute="height" constant="136"/>
+                                    <constraint id="2426" firstItem="2417" firstAttribute="trailing" secondItem="2409" secondAttribute="trailing"/>
+                                    <constraint id="2427" firstItem="2409" firstAttribute="top" secondItem="2417" secondAttribute="top" constant="4"/>
+                                    <constraint id="2430" firstItem="2410" firstAttribute="leading" secondItem="2417" secondAttribute="leading" constant="5"/>
+                                    <constraint id="2431" firstItem="2410" firstAttribute="top" secondItem="2417" secondAttribute="top" constant="45"/>
+                                    <constraint id="2434" firstItem="2417" firstAttribute="trailing" secondItem="2411" secondAttribute="trailing" constant="150"/>
+                                    <constraint id="2435" firstItem="2411" firstAttribute="top" secondItem="2417" secondAttribute="top" constant="45"/>
+                                    <constraint id="2438" firstItem="2417" firstAttribute="trailing" secondItem="2418" secondAttribute="trailing" constant="150"/>
+                                    <constraint id="2439" firstItem="2417" firstAttribute="bottom" secondItem="2418" secondAttribute="bottom" constant="36"/>
+                                    <constraint id="2442" firstItem="2415" firstAttribute="leading" secondItem="2417" secondAttribute="leading" constant="5"/>
+                                    <constraint id="2443" firstItem="2417" firstAttribute="bottom" secondItem="2415" secondAttribute="bottom" constant="36"/>
+                                    <constraint id="2446" firstItem="2416" firstAttribute="leading" secondItem="2417" secondAttribute="leading" constant="5"/>
+                                    <constraint id="2447" firstItem="2417" firstAttribute="bottom" secondItem="2416" secondAttribute="bottom" constant="6"/>
+                                    <constraint id="2450" firstItem="2417" firstAttribute="trailing" secondItem="2412" secondAttribute="trailing"/>
+                                    <constraint id="2451" firstItem="2412" firstAttribute="top" secondItem="2417" secondAttribute="top" constant="45"/>
+                                    <constraint id="2454" firstItem="2417" firstAttribute="trailing" secondItem="2413" secondAttribute="trailing"/>
+                                    <constraint id="2455" firstItem="2417" firstAttribute="bottom" secondItem="2413" secondAttribute="bottom" constant="36"/>
+                                    <constraint id="2458" firstItem="2417" firstAttribute="trailing" secondItem="2419" secondAttribute="trailing" constant="150"/>
+                                    <constraint id="2459" firstItem="2417" firstAttribute="bottom" secondItem="2419" secondAttribute="bottom" constant="6"/>
+                                    <constraint id="2462" firstItem="2417" firstAttribute="trailing" secondItem="2420" secondAttribute="trailing"/>
+                                    <constraint id="2463" firstItem="2417" firstAttribute="bottom" secondItem="2420" secondAttribute="bottom" constant="6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="2164"/>
+                                <exclude reference="2417"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2422"/>
+                                <exclude reference="2423"/>
+                                <exclude reference="2468"/>
+                                <exclude reference="2469"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="2164"/>
+                                <include reference="2417"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2422"/>
+                                <include reference="2423"/>
+                                <include reference="2468"/>
+                                <include reference="2469"/>
                             </mask>
                         </variation>
+                        <constraints>
+                            <constraint id="2422" firstItem="2171" firstAttribute="trailing" secondItem="2417" secondAttribute="trailing"/>
+                            <constraint id="2423" firstItem="2171" firstAttribute="bottom" secondItem="2417" secondAttribute="bottom" constant="9"/>
+                            <constraint id="2468" firstItem="2171" firstAttribute="trailing" secondItem="2172" secondAttribute="trailing"/>
+                            <constraint id="2469" firstItem="2172" firstAttribute="top" secondItem="2171" secondAttribute="top" constant="73"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="AddNewToolBarButton" destination="2166" id="2165"/>
@@ -1163,11 +1523,20 @@
                         <outlet property="CommentToolBarButton" destination="2202" id="name-outlet-2202"/>
                         <outlet property="AccountEntriesTableView" destination="2164" id="name-outlet-2164"/>
                         <outlet property="CloseToolBarButton" destination="2215" id="name-outlet-2215"/>
+                        <outlet property="TotalPaidQuantityLabel" destination="2411" id="name-outlet-2411"/>
+                        <outlet property="TotalReceivedQuantityLabel" destination="2418" id="name-outlet-2418"/>
+                        <outlet property="TotalPaidAmountLabel" destination="2412" id="name-outlet-2412"/>
+                        <outlet property="TotalReceivedAmountLabel" destination="2413" id="name-outlet-2413"/>
+                        <outlet property="TotalBalanceQuantityLabel" destination="2419" id="name-outlet-2419"/>
+                        <outlet property="TotalBalanceAmountLabel" destination="2420" id="name-outlet-2420"/>
+                        <outlet property="TotalPaidLabel" destination="2410" id="name-outlet-2410"/>
+                        <outlet property="TotalReceivedLabel" destination="2415" id="name-outlet-2415"/>
+                        <outlet property="TotalBalanceLabel" destination="2416" id="name-outlet-2416"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2200" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-883" y="64"/>
+            <point key="canvasLocation" x="-1051" y="-82"/>
         </scene>
         <scene sceneID="2339">
             <objects>
@@ -1279,20 +1648,20 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <navigationBar contentMode="scaleToFill" id="2385" translatesAutoresizingMaskIntoConstraints="NO">
+                            <navigationBar contentMode="scaleToFill" id="2385" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="0.0" y="36" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="2386"/>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2387" translatesAutoresizingMaskIntoConstraints="NO">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2387" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="0.0" y="80" width="375" height="44"/>
                                 <items>
                                     <barButtonItem id="2393" systemItem="save"/>
                                     <barButtonItem id="2394" systemItem="flexibleSpace"/>
                                     <barButtonItem id="2388" title="Void"/>
                                     <barButtonItem id="2390" systemItem="flexibleSpace"/>
-                                    <barButtonItem id="2392" title="Comment" image="comment.png"/>
+                                    <barButtonItem id="2392" image="comment.png"/>
                                     <barButtonItem id="2391" systemItem="flexibleSpace"/>
                                     <barButtonItem id="2389" systemItem="cancel"/>
                                 </items>

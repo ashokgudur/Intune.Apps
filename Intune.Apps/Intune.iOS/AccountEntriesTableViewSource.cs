@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Foundation;
 using Intune.Shared.Model;
 using UIKit;
@@ -50,11 +51,46 @@ namespace Intune.iOS
         private List<Entry> entries;
         private AccountEntriesController parentController;
 
-        public AccountEntriesTableViewSource(AccountEntriesController parentController, List<Entry> entries)
+		public double TotalCreditQuantity { get; set; }
+		public double TotalDebitQuantity { get; set; }
+		public decimal TotalCreditAmount { get; set; }
+		public decimal TotalDebitAmount { get; set; }
+
+		public decimal BalanceAmount
+		{
+			get { return TotalCreditAmount - TotalDebitAmount; }
+		}
+
+		public double BalanceQuantity
+		{
+			get { return TotalCreditQuantity - TotalDebitQuantity; }
+		}
+
+        private void CalculateTotals()
+		{
+            var accountEntries = entries.Where(e => !e.IsVoid);
+
+			foreach (var entry in accountEntries)
+			{
+				if (entry.TxnType == TxnType.Paid || entry.TxnType == TxnType.Issued)
+				{
+					TotalCreditAmount += entry.Amount;
+					TotalCreditQuantity += entry.Quantity;
+				}
+				else
+				{
+					TotalDebitAmount += entry.Amount;
+					TotalDebitQuantity += entry.Quantity;
+				}
+			}
+		}
+
+		public AccountEntriesTableViewSource(AccountEntriesController parentController, List<Entry> entries)
         {
             this.parentController = parentController;
             this.entries = entries;
-        }
+			CalculateTotals();
+		}
 
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
