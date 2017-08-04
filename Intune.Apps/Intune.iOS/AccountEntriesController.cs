@@ -59,7 +59,7 @@ namespace Intune.iOS
 		public void SetAccountEntriesTableViewSource()
 		{
 			var entries = IntuneService.GetAccountEntries(Account.Id);
-			AccountEntriesTableView.Source = new AccountEntriesTableViewSource(this, entries);
+            AccountEntriesTableView.Source = new AccountEntriesTableViewSource(this, Account, entries);
 			DisplayAccountSummary();
 		}
 

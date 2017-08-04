@@ -11,11 +11,14 @@ namespace Intune.iOS
     {
         public UIViewController Controller { get; set; }
         private AccountEntriesController parentController { get; set; }
-        public Entry entry;
+        public Account account;
+		public Entry entry;
 
-        public AccountEntryActionSheetActionExecutor(UIViewController controller, Entry entry)
+		public AccountEntryActionSheetActionExecutor(UIViewController controller, 
+                                                     Account account, Entry entry)
         {
             this.Controller = controller;
+            this.account = account;
             this.entry = entry;
             parentController = controller as AccountEntriesController;
         }
@@ -48,49 +51,52 @@ namespace Intune.iOS
 
     public class AccountEntriesTableViewSource : UITableViewSource
     {
+        private Account account;
         private List<Entry> entries;
         private AccountEntriesController parentController;
 
-		public double TotalCreditQuantity { get; set; }
-		public double TotalDebitQuantity { get; set; }
-		public decimal TotalCreditAmount { get; set; }
-		public decimal TotalDebitAmount { get; set; }
+        public double TotalCreditQuantity { get; set; }
+        public double TotalDebitQuantity { get; set; }
+        public decimal TotalCreditAmount { get; set; }
+        public decimal TotalDebitAmount { get; set; }
 
-		public decimal BalanceAmount
-		{
-			get { return TotalCreditAmount - TotalDebitAmount; }
-		}
+        public decimal BalanceAmount
+        {
+            get { return TotalCreditAmount - TotalDebitAmount; }
+        }
 
-		public double BalanceQuantity
-		{
-			get { return TotalCreditQuantity - TotalDebitQuantity; }
-		}
+        public double BalanceQuantity
+        {
+            get { return TotalCreditQuantity - TotalDebitQuantity; }
+        }
 
         private void CalculateTotals()
-		{
+        {
             var accountEntries = entries.Where(e => !e.IsVoid);
 
-			foreach (var entry in accountEntries)
-			{
-				if (entry.TxnType == TxnType.Paid || entry.TxnType == TxnType.Issued)
-				{
-					TotalCreditAmount += entry.Amount;
-					TotalCreditQuantity += entry.Quantity;
-				}
-				else
-				{
-					TotalDebitAmount += entry.Amount;
-					TotalDebitQuantity += entry.Quantity;
-				}
-			}
-		}
+            foreach (var entry in accountEntries)
+            {
+                if (entry.TxnType == TxnType.Paid || entry.TxnType == TxnType.Issued)
+                {
+                    TotalCreditAmount += entry.Amount;
+                    TotalCreditQuantity += entry.Quantity;
+                }
+                else
+                {
+                    TotalDebitAmount += entry.Amount;
+                    TotalDebitQuantity += entry.Quantity;
+                }
+            }
+        }
 
-		public AccountEntriesTableViewSource(AccountEntriesController parentController, List<Entry> entries)
+        public AccountEntriesTableViewSource(AccountEntriesController parentController, 
+                                             Account account, List<Entry> entries)
         {
             this.parentController = parentController;
             this.entries = entries;
-			CalculateTotals();
-		}
+            this.account = account;
+            CalculateTotals();
+        }
 
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
@@ -101,7 +107,7 @@ namespace Intune.iOS
 
         private void ShowActionSheetAlert(Entry entry)
         {
-            var actionExecutor = new AccountEntryActionSheetActionExecutor(parentController, entry);
+            var actionExecutor = new AccountEntryActionSheetActionExecutor(parentController, account, entry);
             var alert = ActionSheetAlert.Instance(actionExecutor);
             var options = new string[] { AccountEntryRowActionOptions.Comment };
 
@@ -120,7 +126,7 @@ namespace Intune.iOS
         {
             var entry = entries[indexPath.Row];
             var cell = tableView.DequeueReusableCell("AccountEntriesTableViewCellId", indexPath) as AccountEntriesTableViewCell;
-            cell.UpdateAccountViewCell(entry);
+            cell.UpdateAccountViewCell(account, entry);
             return cell;
         }
 

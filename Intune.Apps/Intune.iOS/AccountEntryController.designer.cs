@@ -60,15 +60,11 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton TxnDateButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel TxnDateLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField TxnDateTextField { get; set; }
+        UIKit.UIDatePicker TxnDatePicker { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -139,19 +135,14 @@ namespace Intune.iOS
                 SaveToolBarButton = null;
             }
 
-            if (TxnDateButton != null) {
-                TxnDateButton.Dispose ();
-                TxnDateButton = null;
-            }
-
             if (TxnDateLabel != null) {
                 TxnDateLabel.Dispose ();
                 TxnDateLabel = null;
             }
 
-            if (TxnDateTextField != null) {
-                TxnDateTextField.Dispose ();
-                TxnDateTextField = null;
+            if (TxnDatePicker != null) {
+                TxnDatePicker.Dispose ();
+                TxnDatePicker = null;
             }
 
             if (TxnTypeLabel != null) {

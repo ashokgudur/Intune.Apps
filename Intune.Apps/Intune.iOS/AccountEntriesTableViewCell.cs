@@ -12,20 +12,19 @@ namespace Intune.iOS
         {
         }
 
-        public void UpdateAccountViewCell(Entry entry)
+        public void UpdateAccountViewCell(Account account, Entry entry)
         {
 			TxnDateLabel.Text = entry.TxnDate.ToString("dd-MMM-yyyy");
-            TxnTypeLabel.Text = GetTxnType(entry);
+            TxnTypeLabel.Text = GetTxnType(account, entry);
             QuantityLabel.Text = entry.Quantity.ToString("#0");
             AmountLabel.Text = Math.Abs(entry.Amount).ToString("C2", CultureInfo.CurrentCulture);
             NotesLabel.Text = entry.Notes;
 		}
 
-		private string GetTxnType(Entry entry)
+		private string GetTxnType(Account account, Entry entry)
 		{
-            //TODO: need to get the role...
-			//if (_role != UserAccountRole.Collaborator)
-				//return entry.TxnType.ToString();
+			if (account.Role != UserAccountRole.Collaborator)
+				return entry.TxnType.ToString();
 
 			if (entry.TxnType == TxnType.Paid || entry.TxnType == TxnType.Issued)
 				return TxnType.Received.ToString();
