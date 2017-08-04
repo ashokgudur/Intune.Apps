@@ -4,6 +4,9 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using Intune.Shared.Model;
+using RestSharp.Deserializers;
+using RestSharp.Extensions;
+using System.Globalization;
 
 namespace Intune.iOS
 {
@@ -14,9 +17,8 @@ namespace Intune.iOS
         public static User SignIn(string signInId, string password)
         {
             var user = new User { Email = signInId, Password = password };
-            var body = JsonConvert.SerializeObject(user);
             var request = new RestRequest(@"api/user/signin/", Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(user);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<User>(request);
             if (response.StatusCode == HttpStatusCode.OK)
@@ -51,9 +53,8 @@ namespace Intune.iOS
 
         public static User RegiterUser(User user)
         {
-            var body = JsonConvert.SerializeObject(user);
             var request = new RestRequest(@"api/user/register/", Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(user);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<User>(request);
             if (response.StatusCode == HttpStatusCode.OK)
@@ -64,9 +65,8 @@ namespace Intune.iOS
 
         public static User UpdateUser(User user)
         {
-            var body = JsonConvert.SerializeObject(user);
             var request = new RestRequest(@"api/user/update/", Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(user);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<User>(request);
             if (response.StatusCode == HttpStatusCode.OK)
@@ -77,9 +77,8 @@ namespace Intune.iOS
 
         public static void ResetPassword(User user)
         {
-            var body = JsonConvert.SerializeObject(user);
             var request = new RestRequest(@"api/user/resetpassword/", Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(user);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<User>(request);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -152,9 +151,8 @@ namespace Intune.iOS
             string accountSharingApiUri = @"api/account/sharing";
             string param = string.Format("/?accountId={0}", accountId);
             string accountSharingApiUriString = string.Format("{0}{1}", accountSharingApiUri, param);
-            var body = JsonConvert.SerializeObject(accountShares);
             var request = new RestRequest(accountSharingApiUriString, Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(accountShares);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute(request);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -189,9 +187,8 @@ namespace Intune.iOS
 
         public static Account AddAccount(Account account)
         {
-            var body = JsonConvert.SerializeObject(account);
             var request = new RestRequest(@"api/account/create/", Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(account);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<Account>(request);
             if (response.StatusCode == HttpStatusCode.OK)
@@ -202,9 +199,8 @@ namespace Intune.iOS
 
         public static Entry AddAccountEntry(Entry entry)
         {
-            var body = JsonConvert.SerializeObject(entry);
             var request = new RestRequest(@"api/account/addentry/", Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(entry);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<Entry>(request);
             if (response.StatusCode == HttpStatusCode.OK)
@@ -215,9 +211,8 @@ namespace Intune.iOS
 
         public static Contact AddContact(Contact contact)
         {
-            var body = JsonConvert.SerializeObject(contact);
             var request = new RestRequest(@"api/contact/create/", Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(contact);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<Contact>(request);
             if (response.StatusCode == HttpStatusCode.OK)
@@ -228,9 +223,8 @@ namespace Intune.iOS
 
         public static Account UpdateAccount(Account account)
         {
-            var body = JsonConvert.SerializeObject(account);
             var request = new RestRequest(@"api/account/update/", Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(account);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<Account>(request);
             if (response.StatusCode == HttpStatusCode.OK)
@@ -241,9 +235,8 @@ namespace Intune.iOS
 
         public static Contact UpdateContact(Contact contact)
         {
-            var body = JsonConvert.SerializeObject(contact);
             var request = new RestRequest(@"api/contact/update/", Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(contact);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<Contact>(request);
             if (response.StatusCode == HttpStatusCode.OK)
@@ -293,9 +286,8 @@ namespace Intune.iOS
 
         public static Comment AddComment(Comment comment)
         {
-            var body = JsonConvert.SerializeObject(comment);
             var request = new RestRequest(@"api/comment/addcomment/", Method.POST);
-            request.AddParameter("text/json", body, ParameterType.RequestBody);
+            request.AddObject(comment);
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<Comment>(request);
             if (response.StatusCode == HttpStatusCode.OK)
