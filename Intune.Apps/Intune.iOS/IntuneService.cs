@@ -201,6 +201,7 @@ namespace Intune.iOS
         {
             var request = new RestRequest(@"api/account/addentry/", Method.POST);
             request.AddObject(entry);
+            System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             var client = new RestClient(intuneServerUri);
             var response = client.Execute<Entry>(request);
             if (response.StatusCode == HttpStatusCode.OK)

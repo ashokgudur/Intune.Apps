@@ -294,7 +294,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="178" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Email or Mobile" clearButtonMode="whileEditing" fixedFrame="YES">
                                         <rect key="frame" x="18" y="30" width="287" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" keyboardType="emailAddress"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="181" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                         <rect key="frame" x="65" y="68" width="205" height="30"/>
@@ -784,7 +784,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2065" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="whileEditing" placeholder="Mobiile number" fixedFrame="YES">
                                         <rect key="frame" x="0.0" y="150" width="343" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2066" translatesAutoresizingMaskIntoConstraints="NO" text="Mobile:" fixedFrame="YES">
                                         <rect key="frame" x="0.0" y="125" width="101" height="21"/>
@@ -930,7 +930,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="2096" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Account name" clearButtonMode="whileEditing" fixedFrame="YES">
                                         <rect key="frame" x="0.0" y="30" width="350" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="namePhonePad"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" keyboardType="namePhonePad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2094" translatesAutoresizingMaskIntoConstraints="NO" text="Account name:" fixedFrame="YES">
                                         <rect key="frame" x="0.0" y="5" width="128" height="21"/>
