@@ -24,11 +24,7 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem AddNewToolBarButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem CommentToolBarButton { get; set; }
+        UIKit.UIButton AddNewItemButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -58,10 +54,6 @@ namespace Intune.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITabBarItem ProfileTabBarItem { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem RefreshToolBarButton { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
             if (AccountsTabBarItem != null) {
@@ -74,14 +66,9 @@ namespace Intune.iOS
                 AccountsTableView = null;
             }
 
-            if (AddNewToolBarButton != null) {
-                AddNewToolBarButton.Dispose ();
-                AddNewToolBarButton = null;
-            }
-
-            if (CommentToolBarButton != null) {
-                CommentToolBarButton.Dispose ();
-                CommentToolBarButton = null;
+            if (AddNewItemButton != null) {
+                AddNewItemButton.Dispose ();
+                AddNewItemButton = null;
             }
 
             if (ContactsTabBarItem != null) {
@@ -117,11 +104,6 @@ namespace Intune.iOS
             if (ProfileTabBarItem != null) {
                 ProfileTabBarItem.Dispose ();
                 ProfileTabBarItem = null;
-            }
-
-            if (RefreshToolBarButton != null) {
-                RefreshToolBarButton.Dispose ();
-                RefreshToolBarButton = null;
             }
         }
     }

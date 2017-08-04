@@ -53,7 +53,6 @@ namespace Intune.iOS
         {
             CloseToolBarButton.Clicked += CloseToolBarButton_Clicked;
             AddNewToolBarButton.Clicked += AddNewToolBarButton_Clicked;
-            RefreshToolBarButton.Clicked += RefreshToolBarButton_Clicked;
             CommentToolBarButton.Clicked += CommentToolBarButton_Clicked;
         }
 
@@ -129,18 +128,6 @@ namespace Intune.iOS
             try
             {
                 DisplayAccountEntryController(new Entry());
-            }
-            catch (Exception ex)
-            {
-                MessageAlert.Instance(this).Show(ex.Message);
-            }
-        }
-
-        private void RefreshToolBarButton_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                SetAccountEntriesTableViewSource();
             }
             catch (Exception ex)
             {

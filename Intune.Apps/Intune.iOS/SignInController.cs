@@ -55,7 +55,7 @@ namespace Intune.iOS
                 SignInActivityIndicator.Hidden = false;
                 SignInActivityIndicator.StartAnimating();
 
-                DisplayStatusMessage("Trying to login to your Intune...", UIColor.Red);
+                DisplayStatusMessage("Trying to login to your Intune...", UIColor.Blue);
 
                 DisableAllButtons();
                 var signInId = SignInIdTextField.Text;

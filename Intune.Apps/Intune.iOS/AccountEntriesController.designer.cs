@@ -36,10 +36,6 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem RefreshToolBarButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel TotalBalanceAmountLabel { get; set; }
 
         [Outlet]
@@ -99,11 +95,6 @@ namespace Intune.iOS
             if (NavigationBar != null) {
                 NavigationBar.Dispose ();
                 NavigationBar = null;
-            }
-
-            if (RefreshToolBarButton != null) {
-                RefreshToolBarButton.Dispose ();
-                RefreshToolBarButton = null;
             }
 
             if (TotalBalanceAmountLabel != null) {

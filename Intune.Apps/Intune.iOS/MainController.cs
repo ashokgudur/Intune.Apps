@@ -67,8 +67,7 @@ namespace Intune.iOS
 
         private void HookEventHandlers()
         {
-            AddNewToolBarButton.Clicked += AddNewToolBarButton_Clicked;
-            RefreshToolBarButton.Clicked += RefreshToolBarButton_Clicked;
+            AddNewItemButton.TouchUpInside += AddNewItemButton_TouchUpInside;
             MainViewTabBar.ItemSelected += MainViewTabBar_ItemSelected;
         }
 
@@ -152,7 +151,7 @@ namespace Intune.iOS
             }
         }
 
-        private void AddNewToolBarButton_Clicked(object sender, EventArgs e)
+        private void AddNewItemButton_TouchUpInside(object sender, EventArgs e)
         {
             try
             {
@@ -200,18 +199,6 @@ namespace Intune.iOS
             PresentViewController(contactController, true, null);
         }
 
-        private void RefreshToolBarButton_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                RefreshList();
-            }
-            catch (Exception ex)
-            {
-                MessageAlert.Instance(this).Show(ex.Message);
-            }
-        }
-
         void RunAccountsRefreshControl()
         {
             InvokeOnMainThread(() => { AccountsRefreshControl.BeginRefreshing(); });
@@ -224,14 +211,6 @@ namespace Intune.iOS
             InvokeOnMainThread(() => { ContactsRefreshControl.BeginRefreshing(); });
             SetContactsTableViewSource();
             InvokeOnMainThread(() => { ContactsRefreshControl.EndRefreshing(); });
-        }
-
-        private void RefreshList()
-        {
-            if (MainViewTabBar.SelectedItem.Tag == accountsViewTagId)
-                SetAccountsTableViewSource();
-            else if (MainViewTabBar.SelectedItem.Tag == contactsViewTagId)
-                SetContactsTableViewSource();
         }
     }
 }
