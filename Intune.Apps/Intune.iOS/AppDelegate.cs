@@ -22,25 +22,29 @@ namespace Intune.iOS
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
-            var rootViewController = GetRootViewController();
-            Window.RootViewController = new UINavigationController(rootViewController);
+            var storyboard = UIStoryboard.FromName("Main", NSBundle.MainBundle);
+
+            var user = SignIn();
+            if (user == null)
+            {
+                var rootViewController = storyboard.InstantiateViewController("SignInController");
+                Window.RootViewController = new UINavigationController(rootViewController);
+            }
+            else
+            {
+                var rootViewController = storyboard.InstantiateViewController("MainController") as MainController;
+                rootViewController.SignInUser = user;
+                Window.RootViewController = rootViewController;
+            }
+
             Window.MakeKeyAndVisible();
             return true;
         }
 
-        private UIViewController GetRootViewController()
+        private User SignIn()
         {
-            var storyboard = UIStoryboard.FromName("Main", NSBundle.MainBundle);
-            if (SignIn(GetSignInCredentials()))
-                return storyboard.InstantiateViewController("MainController");
-            else
-                return storyboard.InstantiateViewController("SignInController");
-        }
-
-        private bool SignIn(User credentials)
-        {
-            var user = IntuneService.SignIn(credentials.Email, credentials.Password);
-            return user != null;
+            var user = GetSignInCredentials();
+            return IntuneService.SignIn(user.Email, user.Password);
         }
 
         private User GetSignInCredentials()
