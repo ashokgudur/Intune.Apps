@@ -23,6 +23,14 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel RememberLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch RememberSwitch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIActivityIndicatorView SignInActivityIndicator { get; set; }
 
         [Outlet]
@@ -67,6 +75,16 @@ namespace Intune.iOS
             if (MessageLabel != null) {
                 MessageLabel.Dispose ();
                 MessageLabel = null;
+            }
+
+            if (RememberLabel != null) {
+                RememberLabel.Dispose ();
+                RememberLabel = null;
+            }
+
+            if (RememberSwitch != null) {
+                RememberSwitch.Dispose ();
+                RememberSwitch = null;
             }
 
             if (SignInActivityIndicator != null) {

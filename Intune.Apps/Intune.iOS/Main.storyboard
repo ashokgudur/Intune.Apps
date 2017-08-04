@@ -19,23 +19,23 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to your Intune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="44" y="90" width="287" height="30"/>
+                                <rect key="frame" x="44" y="85" width="287" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="18" translatesAutoresizingMaskIntoConstraints="NO" text="Message..." numberOfLines="3" adjustsFontSizeToFit="NO" fixedFrame="YES">
-                                <rect key="frame" x="44" y="135" width="287" height="21"/>
+                                <rect key="frame" x="44" y="120" width="287" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="227" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="26" y="180" width="323" height="155"/>
+                                <rect key="frame" x="26" y="150" width="323" height="203"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="11" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                        <rect key="frame" x="102" y="123" width="119" height="34"/>
+                                        <rect key="frame" x="114" y="165" width="94" height="34"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <state key="normal" title="Sign-in">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,25 +47,35 @@
                                         </variation>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="10" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="whileEditing" placeholder="Password" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="85" width="287" height="30"/>
+                                        <rect key="frame" x="0.0" y="85" width="305" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" returnKeyType="go" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9" translatesAutoresizingMaskIntoConstraints="NO" text="Password:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="63" width="101" height="18"/>
+                                        <rect key="frame" x="0.0" y="60" width="101" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" id="8" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Email or Mobile" clearButtonMode="whileEditing" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="27" width="287" height="30"/>
+                                        <rect key="frame" x="0.0" y="27" width="305" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="emailAddress" spellCheckingType="no" autocorrectionType="no"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3" translatesAutoresizingMaskIntoConstraints="NO" text="Sign In ID:" fixedFrame="YES">
-                                        <rect key="frame" x="18" y="4" width="101" height="18"/>
+                                        <rect key="frame" x="0.0" y="4" width="101" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="2626" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="0.0" y="120" width="51" height="31"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2627" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="59" y="126" width="104" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13" weight="light"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -76,6 +86,8 @@
                                         <exclude reference="9"/>
                                         <exclude reference="8"/>
                                         <exclude reference="3"/>
+                                        <exclude reference="2626"/>
+                                        <exclude reference="2627"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
@@ -85,11 +97,13 @@
                                         <include reference="9"/>
                                         <include reference="8"/>
                                         <include reference="3"/>
+                                        <include reference="2626"/>
+                                        <include reference="2627"/>
                                     </mask>
                                 </variation>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2137" fixedFrame="YES">
-                                <rect key="frame" x="169" y="351" width="37" height="37"/>
+                                <rect key="frame" x="169" y="361" width="37" height="37"/>
                                 <color key="color" colorSpace="calibratedRGB" red="0.25098039215686274" green="0" blue="0.50196078431372548" alpha="1"/>
                             </activityIndicatorView>
                         </subviews>
@@ -123,6 +137,8 @@
                         <outlet property="ForgotPasswordButton" destination="34" id="name-outlet-34"/>
                         <outlet property="SignInView" destination="227" id="name-outlet-227"/>
                         <outlet property="SignInActivityIndicator" destination="2137" id="name-outlet-2137"/>
+                        <outlet property="RememberSwitch" destination="2626" id="name-outlet-2626"/>
+                        <outlet property="RememberLabel" destination="2627" id="name-outlet-2627"/>
                     </connections>
                     <navigationItem id="136" key="navigationItem" title="Intune">
                         <barButtonItem key="rightBarButtonItem" style="done" id="230">
@@ -1747,5 +1763,6 @@
         <image name="logout.png" width="32" height="32"/>
         <image name="profile.png" width="32" height="32"/>
         <image name="comment.png" width="25" height="25"/>
+        <image name="intune-logo.png" width="341" height="338"/>
     </resources>
 </document>

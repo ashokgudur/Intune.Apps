@@ -61,7 +61,8 @@ namespace Intune.iOS
                 DisableAllButtons();
                 var signInId = SignInIdTextField.Text;
                 var password = SignInPasswordTextField.Text;
-                await Task.Run(() => LaunchMainController(signInId, password));
+                var rememberSignIn = RememberSwitch.On;
+                await Task.Run(() => LaunchMainController(signInId, password, rememberSignIn));
 
                 SignInActivityIndicator.Hidden = true;
                 SignInActivityIndicator.StopAnimating();
@@ -93,7 +94,7 @@ namespace Intune.iOS
             ForgotPasswordButton.Enabled = true;
         }
 
-        private void LaunchMainController(string signInId, string password)
+        private void LaunchMainController(string signInId, string password, bool rememberSignIn)
         {
             var user = IntuneService.SignIn(signInId, password);
             if (user == null)
@@ -101,7 +102,10 @@ namespace Intune.iOS
             else
             {
                 SignInUser = user;
-                StoreSignInCredentials();
+
+                if (rememberSignIn)
+                    StoreSignInCredentials();
+
                 BeginInvokeOnMainThread(() => NavigateToMainViewController());
             }
         }
