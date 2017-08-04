@@ -1,5 +1,8 @@
-﻿using Foundation;
+﻿using System.Linq;
+using Foundation;
+using Intune.Shared.Model;
 using UIKit;
+using Xamarin.Auth;
 
 namespace Intune.iOS
 {
@@ -18,15 +21,47 @@ namespace Intune.iOS
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // Override point for customization after application launch.
-            // If not required for your application you can safely delete this method
-
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
-            var storyboard = UIStoryboard.FromName("Main", NSBundle.MainBundle);
-            var rootViewController = (UIViewController)storyboard.InstantiateViewController("SignInController");
+            var rootViewController = GetRootViewController();
             Window.RootViewController = new UINavigationController(rootViewController);
             Window.MakeKeyAndVisible();
             return true;
+        }
+
+        private UIViewController GetRootViewController()
+        {
+            var storyboard = UIStoryboard.FromName("Main", NSBundle.MainBundle);
+            if (SignIn(GetSignInCredentials()))
+                return storyboard.InstantiateViewController("MainController");
+            else
+                return storyboard.InstantiateViewController("SignInController");
+        }
+
+        private bool SignIn(User credentials)
+        {
+            var user = IntuneService.SignIn(credentials.Email, credentials.Password);
+            return user != null;
+        }
+
+        private User GetSignInCredentials()
+        {
+            var store = AccountStore.Create();
+            var storedAccounts = store.FindAccountsForService(Common.DeviceAccountStoreName);
+            if (storedAccounts.Count() == 0)
+            {
+                return new User
+                {
+                    Email = "SystemWakeUpEmail",
+                    Password = "SystemWakeUpPassword"
+                };
+            }
+
+            var storedAccount = storedAccounts.ToArray()[0];
+            return new User
+            {
+                Email = storedAccount.Username,
+                Password = storedAccount.Properties["Password"]
+            };
         }
 
         public override void OnResignActivation(UIApplication application)

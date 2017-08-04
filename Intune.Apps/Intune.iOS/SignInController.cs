@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Intune.Shared.Model;
 using UIKit;
+using Xamarin.Auth;
 
 namespace Intune.iOS
 {
@@ -19,15 +20,15 @@ namespace Intune.iOS
         {
             base.ViewWillAppear(animated);
             Title = "Intune";
-			EnableAllButtons();
-			MessageLabel.Text = "";
-			SignInUser = null;
-			SignInActivityIndicator.Hidden = true;
+            EnableAllButtons();
+            MessageLabel.Text = "";
+            SignInUser = null;
+            SignInActivityIndicator.Hidden = true;
 #if DEBUG
-			SignInIdTextField.Text = "ashok.gudur@gmail.com";
-			SignInPasswordTextField.Text = "ashokg";
+            SignInIdTextField.Text = "ashok.gudur@gmail.com";
+            SignInPasswordTextField.Text = "ashokg";
 #endif
-		}
+        }
 
         public override void ViewDidLoad()
         {
@@ -100,8 +101,17 @@ namespace Intune.iOS
             else
             {
                 SignInUser = user;
+                StoreSignInCredentials();
                 BeginInvokeOnMainThread(() => NavigateToMainViewController());
             }
+        }
+
+        private void StoreSignInCredentials()
+        {
+            var userAccount = new Xamarin.Auth.Account { Username = SignInUser.Email };
+            userAccount.Properties.Add("Password", SignInUser.Password);
+            var store = AccountStore.Create();
+            store.Save(userAccount, Common.DeviceAccountStoreName);
         }
 
         private void NavigateToMainViewController()

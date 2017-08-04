@@ -110,13 +110,21 @@ namespace Intune.iOS
 
         private void NavigateToSignInView()
         {
+            DeleteSavedSignInCredentials();
             var storyboard = UIStoryboard.FromName("Main", NSBundle.MainBundle);
             var signInController = (UIViewController)storyboard.InstantiateViewController("SignInController");
             DismissViewController(true, null);
             PresentViewController(signInController, true, null);
         }
 
-        public void SetAccountsTableViewSource()
+		private void DeleteSavedSignInCredentials()
+		{
+			var store = Xamarin.Auth.AccountStore.Create();
+			var userAccount = new Xamarin.Auth.Account { Username = SignInUser.Email };
+			store.Delete(userAccount, Common.DeviceAccountStoreName);
+		}
+
+		public void SetAccountsTableViewSource()
         {
             //TODO: contactId would come from contacts to display accounts of a given contact
             const int contactId = 0;
