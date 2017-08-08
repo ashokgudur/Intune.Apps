@@ -112,6 +112,9 @@ namespace Intune.iOS
 
         private void StoreSignInCredentials()
         {
+            if (!Common.IsRunningOnDevice())
+                return;
+
             var userAccount = new Xamarin.Auth.Account { Username = SignInUser.Email };
             userAccount.Properties.Add("Password", SignInUser.Password);
             var store = AccountStore.Create();
