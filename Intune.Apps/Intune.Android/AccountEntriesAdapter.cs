@@ -68,7 +68,7 @@ namespace Intune.Android
             entryTxnType.Text = getTxnType(accountEntry);
 
             var entryTxnQuantity = view.FindViewById<TextView>(Resource.Id.entryQuantityTextView);
-            entryTxnQuantity.Text = accountEntry.Quantity.ToString("#0");
+            entryTxnQuantity.Text = accountEntry.Quantity.ToString("#0.####");
 
             var entryTxnAmount = view.FindViewById<TextView>(Resource.Id.entryAmountTextView);
             entryTxnAmount.Text = System.Math.Abs(accountEntry.Amount)
