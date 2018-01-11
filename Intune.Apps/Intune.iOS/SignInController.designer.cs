@@ -10,8 +10,8 @@ using System.CodeDom.Compiler;
 
 namespace Intune.iOS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("SignInController")]
+    partial class SignInController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -19,11 +19,19 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel IntuneLoginInTitle { get; set; }
+        UIKit.UILabel MessageLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel MessageLabel { get; set; }
+        UIKit.UILabel RememberLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch RememberSwitch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIActivityIndicatorView SignInActivityIndicator { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -47,15 +55,15 @@ namespace Intune.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel SignInTitle { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView SignInView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SignUpButton { get; set; }
-
-        [Action ("ForgotPasswordButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void ForgotPasswordButton_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("SignInButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void SignInButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -64,14 +72,24 @@ namespace Intune.iOS
                 ForgotPasswordButton = null;
             }
 
-            if (IntuneLoginInTitle != null) {
-                IntuneLoginInTitle.Dispose ();
-                IntuneLoginInTitle = null;
-            }
-
             if (MessageLabel != null) {
                 MessageLabel.Dispose ();
                 MessageLabel = null;
+            }
+
+            if (RememberLabel != null) {
+                RememberLabel.Dispose ();
+                RememberLabel = null;
+            }
+
+            if (RememberSwitch != null) {
+                RememberSwitch.Dispose ();
+                RememberSwitch = null;
+            }
+
+            if (SignInActivityIndicator != null) {
+                SignInActivityIndicator.Dispose ();
+                SignInActivityIndicator = null;
             }
 
             if (SignInButton != null) {
@@ -97,6 +115,16 @@ namespace Intune.iOS
             if (SignInPasswordTextField != null) {
                 SignInPasswordTextField.Dispose ();
                 SignInPasswordTextField = null;
+            }
+
+            if (SignInTitle != null) {
+                SignInTitle.Dispose ();
+                SignInTitle = null;
+            }
+
+            if (SignInView != null) {
+                SignInView.Dispose ();
+                SignInView = null;
             }
 
             if (SignUpButton != null) {

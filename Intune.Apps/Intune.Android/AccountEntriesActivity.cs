@@ -47,7 +47,7 @@ namespace Intune.Android
             totalPaid.Text = string.Format("TOTAL {0}", getTotalsTxnType("Paid"));
 
             var totalPaidQty = FindViewById<TextView>(Resource.Id.totalPaidQtyTextView);
-            totalPaidQty.Text = _accountsAdapter.TotalCreditQuantity.ToString("#0");
+            totalPaidQty.Text = _accountsAdapter.TotalCreditQuantity.ToString("#0.####");
 
             var totalPaidAmount = FindViewById<TextView>(Resource.Id.totalPaidAmountTextView);
             totalPaidAmount.Text = System.Math.Abs(_accountsAdapter.TotalCreditAmount)
@@ -57,22 +57,24 @@ namespace Intune.Android
             totalReceived.Text = string.Format("TOTAL {0}", getTotalsTxnType("Rcvd"));
 
             var totalReceivedQty = FindViewById<TextView>(Resource.Id.totalReceivedQtyTextView);
-            totalReceivedQty.Text = _accountsAdapter.TotalDebitQuantity.ToString("#0");
+            totalReceivedQty.Text = _accountsAdapter.TotalDebitQuantity.ToString("#0.####");
 
             var totalReceivedAmount = FindViewById<TextView>(Resource.Id.totalReceivedAmountTextView);
             totalReceivedAmount.Text = System.Math.Abs(_accountsAdapter.TotalDebitAmount)
                                     .ToString("C2", CultureInfo.CurrentCulture);
 
-            var balanceTitle = _accountsAdapter.BalanceAmount == 0
-                                ? "Zero"
+            var balanceTitle = _accountsAdapter.BalanceAmount == 0 ? ""
                                 : _accountsAdapter.BalanceAmount > 0
-                                ? getBalanceTitle("Rcvbl") : getBalanceTitle("Paybl");
+                                               ? getBalanceTitle("Rcvbl") 
+                                               : getBalanceTitle("Paybl");
 
             var totalBalance = FindViewById<TextView>(Resource.Id.totalBalanceTextView);
-            totalBalance.Text = string.Format("TOTAL {0}", balanceTitle);
+            totalBalance.Text = balanceTitle == "" 
+                                ? "TOTAL BALANCE" 
+                                : string.Format("TOTAL {0}", balanceTitle);
 
             var totalBalanceQty = FindViewById<TextView>(Resource.Id.totalBalanceQtyTextView);
-            totalBalanceQty.Text = _accountsAdapter.BalanceQuantity.ToString("#0");
+            totalBalanceQty.Text = _accountsAdapter.BalanceQuantity.ToString("#0.####");
 
             var totalBalanceAmount = FindViewById<TextView>(Resource.Id.totalBalanceAmountTextView);
             totalBalanceAmount.Text = System.Math.Abs(_accountsAdapter.BalanceAmount)
